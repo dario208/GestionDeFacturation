@@ -52,4 +52,9 @@ class User extends Authenticatable
             get: fn ($value) => ["prof", "admin", "comptable"][$value],
         );
     }
+
+    public function prof(){
+
+        return $this->hasOne(Prof::class);
+    }
 }
