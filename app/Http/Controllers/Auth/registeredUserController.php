@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\User;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\RedirectResponse;
 
 class registeredUserController extends Controller
 {
     public function create(): View
     {
+        if(!Gate::allows('access-admin')){
+            abort('403');
+        }
         return view('auth.register');
     }
 
