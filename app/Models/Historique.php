@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Historique extends Model
 {
     use HasFactory;
+
+    public function module(){
+
+        return $this->belongsTo(Module::class);
+    }
 }

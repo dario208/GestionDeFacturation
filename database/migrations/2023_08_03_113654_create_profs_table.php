@@ -19,9 +19,7 @@ return new class extends Migration
             $table->integer('heure_effectue');
             $table->integer('heure_total');
             $table->decimal('solde_actuelle',10,2);
-
-            $table->foreignId('user_id')->constrained() ;
-            $table->timestamps();
+            $table->timestamps();;
         });
     }
 

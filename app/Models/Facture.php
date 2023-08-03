@@ -9,8 +9,6 @@ class Facture extends Model
 {
     use HasFactory;
 
-    use HasFactory;
-
     protected $fillable = [''];
 
     // Relation Many-to-One : Une facture appartient à un professeur

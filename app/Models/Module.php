@@ -9,7 +9,6 @@ class Module extends Model
 {
     use HasFactory;
 
-    
     protected $fillable = ['nom', 'type', 'heure_globale'];
 
     // Relation Many-to-One : Un module est attribué à un seul professeur
@@ -24,10 +23,15 @@ class Module extends Model
         return $this->belongsTo(Classe::class);
     }
 
-    // Relation Many-to-One : Un module appartient à un tarif_classe_type en fonction du type et de la classe
-    public function tarif_Classe_Type()
+    // Relation Many-to-One : Un module appartient à un  en fonction du type et de la classe
+    public function tarif()
     {
-        return $this->belongsTo(Tarif_Classe_Type::class)->where('type', $this->type)->where('classe_id', $this->classe_id);
+        return $this->belongsTo(Tarif::class);
+    }
+
+    public function historiques(){
+        
+        return $this->hasMany(Historique::class);
     }
     
 }

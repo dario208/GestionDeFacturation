@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('heure_globale');
             $table->foreignId('prof_id')->constrained();
             $table->foreignId('classe_id')->constrained();
-            $table->foreignId('tarif_classe_type_id')->constrained();
+            $table->foreignId('tarif_id')->constrained();
 
             $table->index('nom');
             $table->index('type');
@@ -26,7 +26,6 @@ return new class extends Migration
             $table->index('prof_id');
             $table->index('classe_id');
             $table->index('tarif_id');
-            $table->index('tarif_classe_type_id');
             
             $table->timestamps();
         });

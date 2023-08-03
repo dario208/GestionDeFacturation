@@ -9,13 +9,11 @@ class Prof extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nom', 'prenom', 'telephone', 'heure_effectue', 'heure_total', 'solde_actuelle'];
-
-    // Relation One-to-One : Un professeur est associé à un seul User
     public function user(){
-
         return $this->belongsTo(User::class);
+        
     }
+
 
 
     // Relation One-to-Many : Un professeur peut enseigner plusieurs modules
@@ -29,4 +27,6 @@ class Prof extends Model
      {
          return $this->hasMany(Facture::class);
      }
+
+
 }

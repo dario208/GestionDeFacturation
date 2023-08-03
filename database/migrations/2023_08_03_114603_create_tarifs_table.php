@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tarif__classe__types', function (Blueprint $table) {
+        Schema::create('tarifs', function (Blueprint $table) {
             $table->id();
             $table->string('type', 20); // Exemple : 'base' ou 'complémentaire'
             $table->decimal('cout_horaire', 10, 2);
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tarif__classe__types');
+        Schema::dropIfExists('tarifs');
     }
 };
