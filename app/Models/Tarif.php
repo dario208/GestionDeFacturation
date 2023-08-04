@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tarif extends Model
 {
     use HasFactory;
+
+    protected $fillable=['type','cout_horaire','classe_id'];
 }

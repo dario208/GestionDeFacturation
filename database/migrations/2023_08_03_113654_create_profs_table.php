@@ -16,10 +16,13 @@ return new class extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->string('telephone');
-            $table->integer('heure_effectue');
-            $table->integer('heure_total');
-            $table->decimal('solde_actuelle',10,2);
-            $table->timestamps();;
+            $table->integer('heure_total')->nullable();
+            $table->decimal('solde_actuelle',10,2)->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            
+            $table->timestamps();
+
+            
         });
     }
 
