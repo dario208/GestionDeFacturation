@@ -14,7 +14,12 @@ Route::middleware('guest')->group(function () {
         Route::post('login', 'store');
 
     });
+
+    
+
 });
+
+
 
 Route::middleware('auth')->group(function () {
 
