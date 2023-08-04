@@ -10,16 +10,16 @@ class homeController extends Controller
 {
     public function index(): View
     {
-        return view('home');
+        return view('dashboard.home');
     }
 
     public function adminHome()
     {
-        return view('adminHome');
+        return view('dashboard.adminHome');
     }
 
     public function comptableHome()
     {
-        return view('comptableHome');
+        return view('dashboard.comptableHome');
     }
 }
