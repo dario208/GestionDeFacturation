@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<h1>bonjour je suis comptable</h1>
+<h1>bonjour je suis comptable lelena ty</h1>
 
 <form method="POST" action="{{ route('logout') }}">
     @csrf
