@@ -17,7 +17,7 @@ class registeredUserController extends Controller
         if(!Gate::allows('access-admin')){
             abort('403');
         }
-        return view('auth.register');
+        return view('Auth.register');
     }
 
 

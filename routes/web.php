@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\componentsController;
 use App\Http\Controllers\homeController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,5 +36,6 @@ Route::middleware(['auth', 'user-access:comptable'])->group(function () {
 
     Route::get('/comptable/home', [homeController::class, 'comptableHome'])->name('comptable.home');
 });
+
 
 require __DIR__ . '/auth.php';
