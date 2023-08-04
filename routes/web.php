@@ -28,6 +28,7 @@ Route::middleware(['auth', 'user-access:prof'])->group(function () {
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('/admin/home', [homeController::class, 'adminHome'])->name('admin.home');
+    
 });
 
 //comptable users Route
