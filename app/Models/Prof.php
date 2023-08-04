@@ -9,6 +9,8 @@ class Prof extends Model
 {
     use HasFactory;
 
+    protected $fillable =['nom','prenom','telephone','user_id'];
+
     public function user(){
         return $this->belongsTo(User::class);
         
