@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('modules', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('type');
             $table->integer('heure_globale');
             $table->foreignId('prof_id')->constrained();
             $table->foreignId('classe_id')->constrained();

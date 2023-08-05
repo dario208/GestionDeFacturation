@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('historiques', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->time('heure_de_debut');
-            $table->time('heure_de_fin');
-            $table->integer('total_heure');
+            $table->time('heure_de_debut')->nullable();
+            $table->time('heure_de_fin')->nullable();
+            $table->integer('total_heure')->nullable();
             $table->foreignId('module_id')->constrained();
 
             $table->index('module_id');
