@@ -73,7 +73,7 @@
 
                 <ul class="menu-sub">
                     <li class="menu-item">
-                        <a href="{{route('list')}}" class="menu-link">
+                        <a href="#" class="menu-link">
                             <div data-i18n="Without menu">Without menu</div>
                         </a>
                     </li>
