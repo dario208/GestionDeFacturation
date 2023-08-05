@@ -25,3 +25,6 @@ Route::middleware('auth')->group(function () {
         Route::delete('logout',  'destroy')->name('logout');
     });
 });
+
+
+  
