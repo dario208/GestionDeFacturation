@@ -3,21 +3,17 @@
 namespace App\Http\Controllers\PocketController;
 
 use App\Http\Controllers\Controller;
-use App\Models\Prof;
+use App\Models\Historique;
 use Illuminate\Http\Request;
 
-class ProfController extends Controller
+class HistoriqueController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $profs=Prof::all();
-
-        return view('listeprof',[
-            'profs'=>$profs,
-        ]);
+        
 
     }
 
@@ -26,7 +22,7 @@ class ProfController extends Controller
      */
     public function create()
     {
-        //
+          
     }
 
     /**
@@ -34,7 +30,7 @@ class ProfController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Historique::create($request->all());
     }
 
     /**
@@ -42,8 +38,7 @@ class ProfController extends Controller
      */
     public function show(string $id)
     {
-           $prof=Prof::findOrFail($id);
-
+        $historique=Historique::findOrFail($id);
     }
 
     /**
@@ -51,29 +46,28 @@ class ProfController extends Controller
      */
     public function edit(string $id)
     {
-        $prof = Prof::findOrFail($id);
+        $historique=Historique::findorFail($id);
     }
- 
+
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        $prof=Prof::findOrFail($id);
-
+       
+       $historique=Historique::findOrFail($id);
         
-        // Mettre à jour les informations du professeur directement avec la méthode update
-        $prof->update($request->all()) ;
+        $historique->update($request->all());
 
     }
- 
+
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        $prof=Prof::findOrFail($id);
+        $historique=Historique::findorFail($id);
 
-        $prof->delete();
+        $historique->delete();
     }
 }

@@ -2,23 +2,18 @@
 
 namespace App\Http\Controllers\PocketController;
 
-use App\Http\Controllers\Controller;
-use App\Models\Prof;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Module;
 
-class ProfController extends Controller
+class ModuleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $profs=Prof::all();
-
-        return view('listeprof',[
-            'profs'=>$profs,
-        ]);
-
+        $modules=Module::all() ;
     }
 
     /**
@@ -26,7 +21,7 @@ class ProfController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -34,7 +29,7 @@ class ProfController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Module::create($request->all());
     }
 
     /**
@@ -42,8 +37,7 @@ class ProfController extends Controller
      */
     public function show(string $id)
     {
-           $prof=Prof::findOrFail($id);
-
+        $module=Module::findOrFail($id);
     }
 
     /**
@@ -51,29 +45,27 @@ class ProfController extends Controller
      */
     public function edit(string $id)
     {
-        $prof = Prof::findOrFail($id);
+        $module=Module::findOrFail($id);
     }
- 
+
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        $prof=Prof::findOrFail($id);
-
+        $module=Module::findOrFail($id);
         
-        // Mettre à jour les informations du professeur directement avec la méthode update
-        $prof->update($request->all()) ;
+        $module->update($request->all());
 
     }
- 
+
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        $prof=Prof::findOrFail($id);
+        $module=Module::findOrFail($id);
 
-        $prof->delete();
+        $module->destroy();
     }
 }

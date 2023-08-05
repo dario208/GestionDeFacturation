@@ -16,9 +16,9 @@ class registeredUserController extends Controller
     public function create(): View
     {
 
-        if (!Gate::allows('access-admin')) {
-            abort('403');
-        }
+         if (!Gate::allows('access-admin')) {
+             abort('403');
+         }
         return view('Auth.register');
     }
 
@@ -39,15 +39,15 @@ class registeredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        $user_id = $user->id;
+         $user_id = $user->id;
 
 
-        Prof::create([
-            'nom' => $request->nom,
-            'prenom' => $request->prenom,
-            'telephone' => $request->telephone,
-            'user_id' => $user_id,
-        ]);
+         Prof::create([
+             'nom' => $request->nom,
+             'prenom' => $request->prenom,
+             'telephone' => $request->telephone,
+             'user_id' => $user_id,
+         ]);
 
         // Rediriger avec un message de succès
         return back()->with('success', 'Register successfully');
