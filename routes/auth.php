@@ -14,7 +14,6 @@ Route::middleware('guest')->group(function () {
         Route::post('login', 'store');
     });
 });
-
 Route::middleware('auth')->group(function () {
 
     Route::controller(registeredUserController::class)->group(function () {
@@ -26,3 +25,6 @@ Route::middleware('auth')->group(function () {
         Route::delete('logout',  'destroy')->name('logout');
     });
 });
+
+
+  
