@@ -20,7 +20,6 @@ return new class extends Migration
             $table->foreignId('tarif_id')->constrained();
 
             $table->index('nom');
-            $table->index('type');
             $table->index('heure_globale');
             $table->index('prof_id');
             $table->index('classe_id');

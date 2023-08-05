@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\componentsController;
-use App\Http\Controllers\homeController;
-use App\Http\Controllers\ListController;
+
+use App\Http\Controllers\dashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,21 +22,22 @@ Route::get('/', function () {
 //Professeur users Route
 Route::middleware(['auth', 'user-access:prof'])->group(function () {
 
-    Route::get('/home', [homeController::class, 'index'])->name('home');
+    Route::get('/dahboardProf', [dashboardController::class, 'dahboardProf'])->name('dahboard.Prof');
 });
 
 //Admin users Route
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
-    Route::get('/admin/home', [homeController::class, 'adminHome'])->name('admin.home');
+    Route::get('/dashboardAdmin', [dashboardController::class, 'dashboardAdmin'])->name('dashboard.Admin');
+    
 });
 
 //comptable users Route
 Route::middleware(['auth', 'user-access:comptable'])->group(function () {
 
-    Route::get('/comptable/home', [homeController::class, 'comptableHome'])->name('comptable.home');
+    Route::get('/dahsboardComptable', [dashboardController::class, 'dahsboardComptable'])->name('dahsboard.Comptable');
 
-    Route::get('/list',[ListController::class,'index'])->name('list');
+
 });
 
 
