@@ -2,9 +2,9 @@
 
 
 use App\Http\Controllers\dashboardController;
-use App\Http\Controllers\listController;
+use App\Http\Controllers\composant\AdminController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\registrationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +31,16 @@ Route::middleware(['auth', 'user-access:prof'])->group(function () {
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('/dashboardAdmin', [dashboardController::class, 'dashboardAdmin'])->name('dashboard.Admin');
-    Route::get('/list', [listController::class, 'index'])->name('liste');
-    Route::get('/registre', [registrationController::class, 'index'])->name('registration');
+    // Route::get('/profs', [AdminController::class, 'tolist'])->name('liste');
+    // Route::get('/registre', [AdminController::class, 'toregistration'])->name('registration');
+    // Route::get('/historiques', [AdminController::class, 'tohistorique'])->name('historique');
+
+    Route::controller(AdminController::class)->group(function (){
+        Route::get('/profs', 'tolist')->name('liste');
+        Route::get('/registre', 'toregistration')->name('registration');
+        Route::get('/historiques', 'tohistorique')->name('historique');
+
+    });
     
 });
 
