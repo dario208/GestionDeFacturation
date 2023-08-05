@@ -2,7 +2,9 @@
 
 
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\listController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\registrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +31,8 @@ Route::middleware(['auth', 'user-access:prof'])->group(function () {
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('/dashboardAdmin', [dashboardController::class, 'dashboardAdmin'])->name('dashboard.Admin');
+    Route::get('/list', [listController::class, 'index'])->name('liste');
+    Route::get('/registre', [registrationController::class, 'index'])->name('registration');
     
 });
 
