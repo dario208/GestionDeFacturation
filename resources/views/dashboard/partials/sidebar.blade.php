@@ -1,4 +1,3 @@
-<!-- Menu -->
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
         <a href="index.html" class="app-brand-link">
@@ -64,7 +63,6 @@
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
         </li>
-
         @if (Auth::check() && Auth::user()->type === 'comptable')
             <!-- Layouts -->
             <li class="menu-item">
@@ -75,7 +73,7 @@
 
                 <ul class="menu-sub">
                     <li class="menu-item">
-                        <a href="layouts-without-menu.html" class="menu-link">
+                        <a href="{{route('list')}}" class="menu-link">
                             <div data-i18n="Without menu">Without menu</div>
                         </a>
                     </li>
@@ -101,11 +99,10 @@
                     </li>
                 </ul>
             </li>
-
+        @elseif (Auth::check() && Auth::user()->type === 'admin')
             <li class="menu-header small text-uppercase">
                 <span class="menu-header-text">Pages</span>
             </li>
-        @elseif (Auth::check() && Auth::user()->type === 'admin')
             <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons bx bx-dock-top"></i>
@@ -129,7 +126,6 @@
                     </li>
                 </ul>
             </li>
-
             <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
@@ -285,9 +281,98 @@
                     </li>
                 </ul>
             </li>
+
+            <!-- Extended components -->
+            <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-copy"></i>
+                    <div data-i18n="Extended UI">Extended UI</div>
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
+                            <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="extended-ui-text-divider.html" class="menu-link">
+                            <div data-i18n="Text Divider">Text Divider</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="menu-item">
+                <a href="icons-boxicons.html" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-crown"></i>
+                    <div data-i18n="Boxicons">Boxicons</div>
+                </a>
+            </li>
+
+            <!-- Forms & Tables -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp;
+                    Tables</span></li>
+            <!-- Forms -->
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-detail"></i>
+                    <div data-i18n="Form Elements">Form Elements</div>
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="forms-basic-inputs.html" class="menu-link">
+                            <div data-i18n="Basic Inputs">Basic Inputs</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="forms-input-groups.html" class="menu-link">
+                            <div data-i18n="Input groups">Input groups</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-detail"></i>
+                    <div data-i18n="Form Layouts">Form Layouts</div>
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="form-layouts-vertical.html" class="menu-link">
+                            <div data-i18n="Vertical Form">Vertical Form</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="form-layouts-horizontal.html" class="menu-link">
+                            <div data-i18n="Horizontal Form">Horizontal Form</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- Tables -->
+            <li class="menu-item">
+                <a href="tables-basic.html" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-table"></i>
+                    <div data-i18n="Tables">Tables</div>
+                </a>
+            </li>
+            <!-- Misc -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
+            <li class="menu-item">
+                <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank"
+                    class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-support"></i>
+                    <div data-i18n="Support">Support</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                    target="_blank" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-file"></i>
+                    <div data-i18n="Documentation">Documentation</div>
+                </a>
+            </li>
         @endif
 
     </ul>
 </aside>
-
-<!-- / Menu -->

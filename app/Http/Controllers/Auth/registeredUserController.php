@@ -15,10 +15,12 @@ class registeredUserController extends Controller
 {
     public function create(): View
     {
-         if(!Gate::allows('access-admin')){
-             abort('403');
-         }
-        return view('auth.register');
+
+        if(!Gate::allows('access-admin')){
+            abort('403');
+        }
+        return view('Auth.register');
+   
     }
 
 

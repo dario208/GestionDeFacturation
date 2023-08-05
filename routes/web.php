@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\componentsController;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\ListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +36,9 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 Route::middleware(['auth', 'user-access:comptable'])->group(function () {
 
     Route::get('/comptable/home', [homeController::class, 'comptableHome'])->name('comptable.home');
+
+    Route::get('/list',[ListController::class,'index'])->name('list');
 });
+
 
 require __DIR__ . '/auth.php';
