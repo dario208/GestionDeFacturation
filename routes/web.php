@@ -39,6 +39,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::get('/profs', 'tolist')->name('liste');
         Route::get('/registre', 'toregistration')->name('registration');
         Route::get('/historiques', 'tohistorique')->name('historique');
+        Route::get('/modules', 'tomodule')->name('module');
+        Route::get('/ajouts', 'toedit')->name('ajout');
 
     });
     

@@ -169,9 +169,9 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
             <!-- Cards -->
             <li class="menu-item">
-                <a href="cards-basic.html" class="menu-link">
+                <a href="{{ route('historique') }}" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">Cards</div>
+                    <div data-i18n="Basic">Historique</div>
                 </a>
             </li>
 
@@ -180,17 +180,17 @@
             <li class="menu-item active open">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons bx bx-detail"></i>
-                    <div data-i18n="Form Elements">Form Elements</div>
+                    <div data-i18n="Form Elements">Modules</div>
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item active">
-                        <a href="forms-basic-inputs.html" class="menu-link">
-                            <div data-i18n="Basic Inputs">Basic Inputs</div>
+                        <a href="{{ route('module') }}" class="menu-link">
+                            <div data-i18n="Basic Inputs">Listes</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="forms-input-groups.html" class="menu-link">
-                            <div data-i18n="Input groups">Input groups</div>
+                        <a href="{{ route('ajout') }}" class="menu-link">
+                            <div data-i18n="Input groups">Ajout</div>
                         </a>
                     </li>
                 </ul>
@@ -206,7 +206,7 @@
                     <li class="menu-item">
                         <a href="{{ route('liste') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-table"></i>
-                            <div data-i18n="Tables">Listes des professeurs</div>
+                            <div data-i18n="Tables">Listes</div>
                         </a>
                     </li>
                     <li class="menu-item">

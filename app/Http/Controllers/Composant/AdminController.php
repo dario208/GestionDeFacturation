@@ -20,13 +20,13 @@ class AdminController extends Controller
      */
     public function toregistration()
     {
-        return view('dashboard.components.admin.registre');
+        return view('dashboard.components.admin.registreProf');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function tohistorique(Request $request)
+    public function tohistorique()
     {
         return view('dashboard.components.admin.historique');
     }
@@ -34,17 +34,17 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function tomodule()
     {
-        //
+        return view('dashboard.components.admin.module');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function toedit()
     {
-        //
+        return view('dashboard.components.admin.registreModule');
     }
 
     /**
