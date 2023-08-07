@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\composant\AdminController;
+use App\Http\Controllers\composant\ProfController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -25,6 +26,11 @@ Route::get('/', function () {
 Route::middleware(['auth', 'user-access:prof'])->group(function () {
 
     Route::get('/dahboardProf', [dashboardController::class, 'dahboardProf'])->name('dahboard.Prof');
+    Route::controller(ProfController::class)->group(function (){
+        Route::get('/profils', 'toprofil')->name('profil');
+        
+
+    });
 });
 
 //Admin users Route
