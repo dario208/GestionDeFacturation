@@ -16,10 +16,8 @@ class registeredUserController extends Controller
     public function create(): View
     {
 
-         if (!Gate::allows('access-admin')) {
-             abort('403');
-         }
-        return view('Auth.register');
+
+        return view('dashboard.components.prof.addProf');
     }
 
 
@@ -50,6 +48,6 @@ class registeredUserController extends Controller
          ]);
 
         // Rediriger avec un message de succès
-        return back()->with('success', 'Register successfully');
+        return redirect()->route('prof.liste');
     }
 }

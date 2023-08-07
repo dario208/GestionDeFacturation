@@ -1,9 +1,10 @@
 <?php
 
 
-use App\Http\Controllers\dashboardController;
-use App\Http\Controllers\composant\AdminController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Request;
+use App\Http\Controllers\profController;
+use App\Http\Controllers\dashboardController;
 
 
 /*
@@ -16,6 +17,21 @@ use Illuminate\Support\Facades\Route;
 | hiassa fgn anao , entre temps ny zou? 
 Guzzle Http
 */
+
+function active($route)
+{
+    if (is_array($route)) {
+        return in_array(Request::path(), $route) ? 'active' : '';
+    } else {
+        return Request::path() == $route ? 'active' : '';
+    }
+}
+
+function active_open($openRoutes)
+{
+    return is_array($openRoutes) && in_array(Request::path(), $openRoutes) ? 'active open' : '';
+}
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,25 +47,25 @@ Route::middleware(['auth', 'user-access:prof'])->group(function () {
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('/dashboardAdmin', [dashboardController::class, 'dashboardAdmin'])->name('dashboard.Admin');
-    // Route::get('/profs', [AdminController::class, 'tolist'])->name('liste');
-    // Route::get('/registre', [AdminController::class, 'toregistration'])->name('registration');
-    // Route::get('/historiques', [AdminController::class, 'tohistorique'])->name('historique');
 
-    Route::controller(AdminController::class)->group(function (){
-        Route::get('/profs', 'tolist')->name('liste');
-        Route::get('/registre', 'toregistration')->name('registration');
-        Route::get('/historiques', 'tohistorique')->name('historique');
+    // ------------------------ professeur -------------------------------//
+    Route::controller(profController::class)->group(function () {
+        Route::prefix('prof')->group(function () {
 
+            Route::get('liste', 'index')->name('prof.liste');
+            Route::get('add', 'create')->name('prof.add');
+            Route::get('show/{id}', 'show')->name('prof.show');
+            Route::get('edit/{id}', 'edit')->name('prof.edit');
+            Route::post('edit/{id}', 'update')->name('prof.update');
+            Route::delete('delete/{id}','destroy')->name('prof.delete');
+        });
     });
-    
 });
 
 //comptable users Route
 Route::middleware(['auth', 'user-access:comptable'])->group(function () {
 
     Route::get('/dahsboardComptable', [dashboardController::class, 'dahsboardComptable'])->name('dahsboard.Comptable');
-
-
 });
 
 
