@@ -42,6 +42,21 @@
                                         </div>
                                     </div>
 
+
+                                       <!-- Formulaire pour le professeur -->
+                                      <div class="mb-3">
+                                        <label for="nom" class="form-label">Nom :</label>
+                                        <input type="text" name="nom"  class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="prenom" class="form-label">Prenom :</label>
+                                        <input type="text" name="prenom"  class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="telephone" class="form-label">Téléphone</label>
+                                        <input type="text" name="telephone"  class="form-control" required>
+                                    </div>   
+
                                     <div class="d-flex  justify-content-start mx-4 mb-3 mb-lg-4">
                                         <button type="submit" class="btn btn-primary btn-lg">Register</button>
                                     </div>

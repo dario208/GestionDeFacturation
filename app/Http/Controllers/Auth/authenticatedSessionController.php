@@ -12,7 +12,7 @@ class authenticatedSessionController extends Controller
 {
     public function create(): View
     {
-        return view('auth.login');
+        return view('Auth.login');
     }
 
     public function store(Request $request): RedirectResponse
@@ -33,11 +33,11 @@ class authenticatedSessionController extends Controller
         if (Auth::attempt($credentials)) {
             // L'authentification est réussie, rediriger vers la page d'accueil
             if (auth()->user()->type == 'admin') {
-                return redirect()->route('admin.home');
+                return redirect()->route('dashboard.Admin');
             } else if (auth()->user()->type == 'comptable') {
-                return redirect()->route('comptable.home');
+                return redirect()->route('dahsboard.Comptable');
             } else {
-                return redirect('/home');
+                return redirect('/dahboardProf');
             }
         } else {
             return redirect()->route('login')->with('error', 'Email-Adrress and  Password are  wrong');
