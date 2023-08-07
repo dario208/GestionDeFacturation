@@ -15,7 +15,7 @@ class ProfController extends Controller
     {
         $profs=Prof::all();
 
-        return view('listeprof',[
+        return view('PocketView.listProf',[
             'profs'=>$profs,
         ]);
 
@@ -26,7 +26,7 @@ class ProfController extends Controller
      */
     public function create()
     {
-        //
+        return view('PocketView.createProf');
     }
 
     /**
@@ -52,6 +52,10 @@ class ProfController extends Controller
     public function edit(string $id)
     {
         $prof = Prof::findOrFail($id);
+
+        return view('PocketView.editProf',[
+            'prof'=>$prof,
+        ]);
     }
  
     /**
@@ -65,6 +69,8 @@ class ProfController extends Controller
         // Mettre à jour les informations du professeur directement avec la méthode update
         $prof->update($request->all()) ;
 
+        
+
     }
  
     /**
@@ -72,8 +78,17 @@ class ProfController extends Controller
      */
     public function destroy(string $id)
     {
-        $prof=Prof::findOrFail($id);
+        
+        $prof = Prof::find($id);
+        if ($prof) {
+            $prof->delete();
+            // Message flash pour indiquer la suppression réussie (facultatif)
+            session()->flash('success', 'Professeur supprimé avec succès.');
+        }
 
-        $prof->delete();
+        // Redirection vers la liste des professeurs
+        return redirect()->route('listProf');
     }
+
+    
 }
