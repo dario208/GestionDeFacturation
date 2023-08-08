@@ -155,8 +155,8 @@
                             <tr>
                                 <td>{{ $prof->nom }}</td>
                                 <td>{{ $prof->prenom }}</td>
-                                <td b>120 000 Ar</td>
-                                <td>0 Ar</td>
+                                <td> <span class="badge bg-success fs-6">120 000 Ar</span></td>
+                                <td> <span class="badge bg-warning fs-6">0 Ar</span></td>
                                 <td><span class="badge bg-success">Payé</span></td>
 
                                 <td>
