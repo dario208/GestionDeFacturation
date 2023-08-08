@@ -22,3 +22,5 @@
 <script src="{{ asset('template/vendor/js/helpers.js') }}"></script>
 <script src="{{ asset('template/js/config.js') }}"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+

@@ -26,7 +26,7 @@ class Module extends Model
     // Relation Many-to-One : Un module appartient à un  en fonction du type et de la classe
     public function tarif()
     {
-        return $this->belongsTo(Tarif::class);
+        return $this->hasOne(Tarif::class);
     }
 
     public function historiques(){

@@ -35,7 +35,7 @@ function active_open($openRoutes)
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('principale');
 });
 
 //Professeur users Route
