@@ -70,4 +70,7 @@ Route::middleware(['auth', 'user-access:comptable'])->group(function () {
 
 
 require __DIR__ . '/auth.php';
+
 require __DIR__ . '/Pocket/labo.php';
+
+
