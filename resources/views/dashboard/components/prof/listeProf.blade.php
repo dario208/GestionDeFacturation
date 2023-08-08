@@ -61,7 +61,79 @@
         </div>
         <!--/ Basic Bootstrap Table -->
     </div>
-    
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Facture</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <h6> 
+                                <span class="bg-info border rounded p-1 text-white fs-5">Professeur</span> <span class="fs-5">: Ranaivoson Juan</span>
+                                
+                            </h6>
+                            <p><span class="bg-info border rounded p-1 text-white fs-5">Email</span> <span class="fs-5">: juan@gmail.com</span></p>
+                            <p><span class="bg-info border rounded p-1 text-white fs-5">Téléphone</span> <span class="fs-5">: 032 98 933 12</span></p>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr class="bg-primary">
+                                    <th class="text-white fs-7">Date</th>
+                                    <th class="text-white fs-7">Heure de Début</th>
+                                    <th class="text-white fs-7">Heure de Fin</th>
+                                    <th class="text-white fs-7">Module</th>
+                                    <th class="text-white fs-7">Niveau</th>
+                                    <th class="text-white fs-7">Heures</th>
+                                    <th class="text-white fs-7">Montant</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2023-08-01</td>
+                                    <td>08:00 AM</td>
+                                    <td>10:00 AM</td>
+                                    <td>Mathématiques</td>
+                                    <td>L1</td>
+                                    <td>2H</td>
+                                    <td>40 000 Ar</td>
+                                </tr>
+                                <tr>
+                                    <td>2023-08-03</td>
+                                    <td>09:00 AM</td>
+                                    <td>11:00 AM</td>
+                                    <td>Science</td>
+                                    <td>L1</td>
+                                    <td>2H</td>
+                                    <td>40 000 Ar</td>
+                                </tr>
+                                <tr>
+                                    <td>2023-08-05</td>
+                                    <td>10:00 AM</td>
+                                    <td>12:00 PM</td>
+                                    <td>Histoire</td>
+                                    <td>L1</td>
+                                    <td>2H</td>
+                                    <td>40 000 Ar</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="6" class="text-end"><strong class="fs-4">Total:</strong></td>
+                                    <td><strong class="bg-success border rounded p-1 fs-4">120 000 Ar</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-success">Marquer comme Payé</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     
     
 @endsection
