@@ -138,11 +138,11 @@
         
         <!-- Basic Bootstrap Table -->
         <div class="card p-3">
-            <h5 class="card-header">Professeur</h5>
+            <h5 class="card-header">Suivie de Facture</h5>
             <div class="table-responsive text-nowrap">
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
-                        <tr>
+                        <tr class="bg-primary">
                             <th>Nom</th>
                             <th>Prenom</th>
                             <th>Montant Payé</th>
