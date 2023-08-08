@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Historique;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,7 +30,7 @@ class historiqueController extends Controller
      */
     public function store(Request $request)
     {
-        
+        Historique::create($request->all());
     }
 
     /**
