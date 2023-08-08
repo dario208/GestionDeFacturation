@@ -66,16 +66,16 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="card-title">Facture</h2>
+                        <h2 class="card-title badge bg-secondary fs-5">Facture</h2>
                     </div>
                     <div class="card-body">
                         <div class="mb-4">
                             <h6> 
-                                <span class="bg-info border rounded p-1 text-white fs-5">Professeur</span> <span class="fs-5">: Ranaivoson Juan</span>
+                                <span class="badge bg-info fs-6">Professeur</span> <span class="fs-5">: Ranaivoson Juan</span>
                                 
                             </h6>
-                            <p><span class="bg-info border rounded p-1 text-white fs-5">Email</span> <span class="fs-5">: juan@gmail.com</span></p>
-                            <p><span class="bg-info border rounded p-1 text-white fs-5">Téléphone</span> <span class="fs-5">: 032 98 933 12</span></p>
+                            <p><span class="badge bg-info fs-6">Email</span> <span class="fs-5">: juan@gmail.com</span></p>
+                            <p><span class="badge bg-info fs-6">Téléphone</span> <span class="fs-5">: 032 98 933 12</span></p>
                         </div>
                         <table class="table">
                             <thead>
@@ -97,7 +97,7 @@
                                     <td>Mathématiques</td>
                                     <td>L1</td>
                                     <td>2H</td>
-                                    <td>40 000 Ar</td>
+                                    <td ><span class=" badge bg-success fs-6"> 40 000 Ar</span></td>
                                 </tr>
                                 <tr>
                                     <td>2023-08-03</td>
@@ -106,7 +106,7 @@
                                     <td>Science</td>
                                     <td>L1</td>
                                     <td>2H</td>
-                                    <td>40 000 Ar</td>
+                                    <td><span class=" badge bg-success fs-6"> 40 000 Ar</span></td>
                                 </tr>
                                 <tr>
                                     <td>2023-08-05</td>
@@ -115,19 +115,19 @@
                                     <td>Histoire</td>
                                     <td>L1</td>
                                     <td>2H</td>
-                                    <td>40 000 Ar</td>
+                                    <td><span class=" badge bg-success fs-6"> 40 000 Ar</span></td>
                                 </tr>
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <td colspan="6" class="text-end"><strong class="fs-4">Total:</strong></td>
-                                    <td><strong class="bg-success border rounded p-1 fs-4">120 000 Ar</strong></td>
+                                    <td><strong class="badge bg-success fs-5">120 000 Ar</strong></td>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-success">Marquer comme Payé</button>
+                        <button class="btn btn-success  fs-5">Marquer comme Payé</button>
                     </div>
                 </div>
             </div>
@@ -157,7 +157,7 @@
                             <tr>
                                 <td>{{ $prof->nom }}</td>
                                 <td>{{ $prof->prenom }}</td>
-                                <td>120 000 Ar</td>
+                                <td b>120 000 Ar</td>
                                 <td>0 Ar</td>
                                 <td><span class="badge bg-success">Payé</span></td>
 
