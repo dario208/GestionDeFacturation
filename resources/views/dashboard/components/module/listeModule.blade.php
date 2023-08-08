@@ -3,30 +3,34 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
         <div class=" text-end mb-4">
-            <a class="btn btn-primary" href="{{ route('prof.add') }}">ajouter</a>
+            <a class="btn btn-primary" href="{{ route('module.add') }}">ajouter</a>
         </div>
         <!-- Basic Bootstrap Table -->
         <div class="card p-3">
-            <h5 class="card-header">Professeur</h5>
+            <h5 class="card-header">Module</h5>
             <div class="table-responsive text-nowrap">
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
                             <th>Nom</th>
-                            <th>Prenom</th>
-                            <th>E-mail</th>
-                            <th>Numero</th>
+                            <th>H-Globale</th>
+                            <th>Type</th>
+                            <th>Classe</th>
+                            <th>Tarif</th>
+                            <th>Prof</th>
                             <th>Action</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($profs as $prof)
+                     
                             <tr>
-                                <td>{{ $prof->nom }}</td>
-                                <td>{{ $prof->prenom }}</td>
-                                <td>{{ $prof->user->email }}</td>
-                                <td>{{ $prof->telephone }}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 <td>
                                     <div class="dropdown">
                                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
@@ -34,13 +38,13 @@
                                             <i class="bx bx-dots-vertical-rounded"></i>
                                         </button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{{ route('prof.edit', ['id' => $prof->id]) }}"><i
+                                            <a class="dropdown-item" href=""><i
                                                     class="bx bx-edit-alt me-1"></i> Edit</a>
 
-                                            <a class="dropdown-item" href="{{ route('prof.show', ['id' => $prof->id]) }}"><i
+                                            <a class="dropdown-item" href=""><i
                                                     class="bx bx-edit-alt me-1"></i>Show</a>
 
-                                            <form method="POST" action="{{ route('prof.delete', ['id' => $prof->id]) }}"
+                                            <form method="POST" action=""
                                                 style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
@@ -52,7 +56,7 @@
                                     </div>
                                 </td>
                             </tr>
-                        @endforeach
+                 
 
 
                     </tbody>

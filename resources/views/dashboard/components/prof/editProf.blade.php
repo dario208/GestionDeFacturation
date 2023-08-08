@@ -1,11 +1,12 @@
 @extends('layouts.template')
 @section('content')
-    <div class="col-xl">
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms /</span> Basic Inputs</h4>
+
+
+        <!-- HTML5 Inputs -->
         <div class="card mb-4">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">Professeur</h5>
-                <small class="text-muted float-end">Default label</small>
-            </div>
+            <h5 class="card-header">HTML5 Inputs</h5>
             <div class="card-body">
                 <form method="POST" action="{{ route('prof.update', ['id' => $prof->id]) }}">
                     @csrf
@@ -28,10 +29,9 @@
             </div>
         </div>
 
-    </div>
-
-
-    <div class="text-start">
-        <button class="btn btn-danger" type="submit">Update</button>
+        <div class="text-start">
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
+        </form>
     </div>
 @endsection

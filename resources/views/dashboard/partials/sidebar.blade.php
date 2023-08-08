@@ -57,53 +57,66 @@
 
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item">
-            <a href="index.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Dashboard</div>
-            </a>
-        </li>
-        @if (Auth::check() && Auth::user()->type === 'admin')
+        @auth
+            @if (Auth::user()->type == 'admin')
+                <li class="menu-item {{ active(['dashboardAdmin']) }}">
+                    <a href="{{ route('dashboard.Admin') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                        <div data-i18n="Analytics">Dashboard</div>
+                    </a>
+                </li>
+            @elseif(Auth::user()->type == 'comptable')
+                <li class="menu-item {{ active(['dashboardComptable']) }}">
+                    <a href="{{ route('dahsboard.Comptable') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                        <div data-i18n="Analytics">Dashboard</div>
+                    </a>
+                </li>
+            @elseif(Auth::user()->type == 'prof')
+                <li class="menu-item {{ active(['dashboardProf']) }}">
+                    <a href="{{ route('dahboard.Prof') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                        <div data-i18n="Analytics">Dashboard</div>
+                    </a>
+                </li>
+            @endif
+        @endauth
+        @if (Auth::user()->type === 'admin')
             <li class="menu-header small text-uppercase">
                 <span class="menu-header-text">Pages</span>
             </li>
-            <li class="menu-item {{active_open(['prof/liste','prof/add'])}}">
+            <li class="menu-item {{ active_open(['prof/liste', 'prof/add']) }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons bx bx-dock-top"></i>
                     <div data-i18n="Account Settings">Professeur</div>
                 </a>
                 <ul class="menu-sub">
-                    <li class="menu-item {{active(['prof/liste'])}}">
-                        <a href="{{route('prof.liste')}}" class="menu-link">
+                    <li class="menu-item {{ active(['prof/liste']) }}">
+                        <a href="{{ route('prof.liste') }}" class="menu-link">
                             <div data-i18n="Account">Prof Liste</div>
                         </a>
                     </li>
-                    <li class="menu-item {{active(['prof/add'])}}">
-                        <a href="{{route('prof.add')}}" class="menu-link">
+                    <li class="menu-item {{ active(['prof/add']) }}">
+                        <a href="{{ route('prof.add') }}" class="menu-link">
                             <div data-i18n="Notifications">Prof Add</div>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="menu-item">
+            <li class="menu-item {{ active_open(['module/liste', 'module/add']) }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
-                    <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                    <div data-i18n="Authentications">Authentications</div>
+                    <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                    <div data-i18n="Account Settings">Module</div>
                 </a>
                 <ul class="menu-sub">
-                    <li class="menu-item">
-                        <a href="auth-login-basic.html" class="menu-link" target="_blank">
-                            <div data-i18n="Basic">Login</div>
+                    <li class="menu-item {{ active(['module/liste']) }}">
+                        <a href="{{ route('module.liste') }}" class="menu-link">
+                            <div data-i18n="Account">Consulter</div>
                         </a>
                     </li>
-                    <li class="menu-item">
-                        <a href="auth-register-basic.html" class="menu-link" target="_blank">
-                            <div data-i18n="Basic">Register</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-                            <div data-i18n="Basic">Forgot Password</div>
+                    <li class="menu-item {{ active(['module/add']) }}">
+                        <a href="{{ route('module.add') }}" class="menu-link">
+                            <div data-i18n="Notifications">Créer</div>
                         </a>
                     </li>
                 </ul>
