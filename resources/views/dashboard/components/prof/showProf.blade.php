@@ -25,12 +25,13 @@
 
         <div class="row mb-5">
             <div class="col-md-6 col-lg-4">
-                <div class="card text-center mb-3">
+                <div class="card text-center mb-2">
                     <div class="card-body">
                         <h4 class="card-title fw-bold">Mathématique</h4>
                         <p class="card-text">L1</p>
                         <h5 class="card-text"><span>20</span>/<span>30</span></h5>
-                        <a href="{{ route('module.historique')}}" class="btn btn-primary">Historique</a>
+                        <a href="{{ route('module.historique')}}" class="btn btn-secondary">Historique</a>
+                        <a href="{{ route('heure.saisie')}}" class="btn btn-success">Enregistrer</a>
                     </div>
                 </div>
             </div>

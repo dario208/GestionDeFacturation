@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\profController;
 use App\Http\Controllers\moduleController;
 use App\Http\Controllers\dashboardController;
-
+use App\Http\Controllers\historiqueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +46,14 @@ Route::middleware(['auth', 'user-access:prof'])->group(function () {
 
             Route::get('/', 'dashboardProf')->name('dashboard.Prof');
             Route::get('profil', 'update')->name('dahboard.Prof.Profil');
+
+        });
+    });
+    Route::controller(historiqueController::class)->group(function () {
+        Route::prefix('historique')->group(function () {
+
+            Route::get('/saisie', 'create')->name('heure.saisie');
+            
 
         });
     });
