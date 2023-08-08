@@ -2,21 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
-
 use App\Models\Prof;
 use App\Models\Tarif;
 use App\Models\Classe;
 use App\Models\Module;
-
 use Illuminate\Http\Request;
 
 class moduleController extends Controller
 {
 
-  /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $modules=Module::all() ;
@@ -33,11 +27,11 @@ class moduleController extends Controller
         $classes=Classe::all();
 
         // return view('dashboard.components.module.addModule');
-        return view('Pocket.createModule',[
+        return view('dashboard.components.module.addModule',[
             'profs'=>$profs,
             'classes'=>$classes
         ]);
-       
+
     }
 
     /**

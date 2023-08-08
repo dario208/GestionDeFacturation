@@ -41,8 +41,14 @@ Route::get('/', function () {
 //Professeur users Route
 Route::middleware(['auth', 'user-access:prof'])->group(function () {
 
-    Route::get('/dashboardProf', [dashboardController::class, 'dahboardProf'])->name('dahboard.Prof');
-    
+    Route::controller(dashboardController::class)->group(function () {
+        Route::prefix('dashboardProf')->group(function () {
+
+            Route::get('/', 'dashboardProf')->name('dashboard.Prof');
+            Route::get('profil', 'update')->name('dahboard.Prof.Profil');
+
+        });
+    });
 });
 
 //Admin users Route
@@ -69,7 +75,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
             Route::get('liste', 'index')->name('module.liste');
             Route::get('add', 'create')->name('module.add');
-            Route::get('historique','show')->name('module.historique');
+            Route::get('historique', 'show')->name('module.historique');
         });
     });
 });
@@ -77,11 +83,9 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 //comptable users Route
 Route::middleware(['auth', 'user-access:comptable'])->group(function () {
 
-    Route::get('/dashboardComptable', [dashboardController::class, 'dahsboardComptable'])->name('dahsboard.Comptable');
+    Route::get('/dashboardComptable', [dashboardController::class, 'dashboardComptable'])->name('dashboard.Comptable');
 });
 
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/Pocket/labo.php';
-
-

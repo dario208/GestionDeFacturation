@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class dashboardController extends Controller
 {
-    public function dahboardProf(): View
+    public function dashboardProf(): View
     {
         return view('dashboard.prof');
     }
@@ -18,7 +18,7 @@ class dashboardController extends Controller
         return view('dashboard.admin');
     }
 
-    public function dahsboardComptable(): View
+    public function dashboardComptable(): View
     {
         return view('dashboard.comptable');
     }
