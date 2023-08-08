@@ -2,14 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\View\View;
+
 use App\Models\Prof;
 use App\Models\Tarif;
 use App\Models\Classe;
 use App\Models\Module;
+
 use Illuminate\Http\Request;
 
 class moduleController extends Controller
 {
+
+    public function index(): View
+    {
+        return view('dashboard.components.module.listeModule');
+    }
+
+    public function create(): View
+    {
+        return view('dashboard.components.module.addModule');
+    }
+
+    public function show()
+    {
+        return view('dashboard.components.module.historiqueModule');
+    }
+
   /**
      * Display a listing of the resource.
      */
@@ -103,4 +122,5 @@ class moduleController extends Controller
     return response()->json(['tarif' => $cout_horaire]);
 
 }
+
 }

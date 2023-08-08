@@ -21,3 +21,4 @@
 
 <script src="{{ asset('template/vendor/js/helpers.js') }}"></script>
 <script src="{{ asset('template/js/config.js') }}"></script>
+

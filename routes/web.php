@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\profController;
+use App\Http\Controllers\moduleController;
 use App\Http\Controllers\dashboardController;
 
 
@@ -40,7 +41,8 @@ Route::get('/', function () {
 //Professeur users Route
 Route::middleware(['auth', 'user-access:prof'])->group(function () {
 
-    Route::get('/dahboardProf', [dashboardController::class, 'dahboardProf'])->name('dahboard.Prof');
+    Route::get('/dashboardProf', [dashboardController::class, 'dahboardProf'])->name('dahboard.Prof');
+    
 });
 
 //Admin users Route
@@ -57,7 +59,17 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
             Route::get('show/{id}', 'show')->name('prof.show');
             Route::get('edit/{id}', 'edit')->name('prof.edit');
             Route::post('edit/{id}', 'update')->name('prof.update');
-            Route::delete('delete/{id}','destroy')->name('prof.delete');
+            Route::delete('delete/{id}', 'destroy')->name('prof.delete');
+        });
+    });
+
+    // ------------------------ Module -------------------------------//
+    Route::controller(moduleController::class)->group(function () {
+        Route::prefix('module')->group(function () {
+
+            Route::get('liste', 'index')->name('module.liste');
+            Route::get('add', 'create')->name('module.add');
+            Route::get('historique','show')->name('module.historique');
         });
     });
 });
@@ -65,7 +77,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 //comptable users Route
 Route::middleware(['auth', 'user-access:comptable'])->group(function () {
 
-    Route::get('/dahsboardComptable', [dashboardController::class, 'dahsboardComptable'])->name('dahsboard.Comptable');
+    Route::get('/dashboardComptable', [dashboardController::class, 'dahsboardComptable'])->name('dahsboard.Comptable');
 });
 
 
