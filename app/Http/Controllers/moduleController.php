@@ -40,6 +40,8 @@ class moduleController extends Controller
     public function store(Request $request)
     {
         Module::create($request->all());
+
+        dd('Crée');
     }
 
     /**
@@ -82,29 +84,32 @@ class moduleController extends Controller
     }
 
 
-
     public function getTarif(Request $request)
-{
-    $type = $request->input('type');
-    $classe = $request->input('classe');
-    
-    //Je dois rechercher le tarif_horaire en fonction du type et de la classe
-    $tarif = Tarif::where('type', $type)
-    ->whereHas('classe', function ($query) use ($classe) {
-        $query->where('niveau', $classe);
-    })
-    ->first();
-    
-
-    // Vérification  si un tarif a été trouvé
-    if ($tarif) {
-        $cout_horaire = $tarif->cout_horaire;
-    } else {
-        $cout_horaire = 0; //  une valeur par défaut si aucun tarif n'est trouvé
+    {
+        $type = $request->input('type');
+        $classe = $request->input('classe');
+        
+        // Rechercher le tarif en fonction du type et de la classe
+        $tarif = Tarif::where('type', $type)
+            ->where('classe_id', $classe)
+            ->first();
+        
+        // Vérification si un tarif a été trouvé
+        if ($tarif) {
+            $cout_horaire = $tarif->cout_horaire;
+            $tarif_id = $tarif->id; // Récupérer l'ID du coût horaire
+        } else {
+            $cout_horaire = 0; // une valeur par défaut si aucun tarif n'est trouvé
+            $tarif_id = null; // ID du coût horaire non trouvé
+        }
+        
+        return response()->json([
+            'tarif' => $cout_horaire,
+            'tarif_id' => $tarif_id, // Inclure l'ID du coût horaire
+        ]);
     }
     
-    return response()->json(['tarif' => $cout_horaire]);
 
 }
 
-}
+
