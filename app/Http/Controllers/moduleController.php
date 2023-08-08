@@ -13,9 +13,11 @@ class moduleController extends Controller
 
     public function index()
     {
-        $modules=Module::all() ;
+        $modules = Module::all();
 
-        return view('dashboard.components.module.listeModule');
+        return view('dashboard.components.module.listeModule', [
+            'modules' => $modules,
+        ]);
     }
 
     /**
@@ -23,15 +25,14 @@ class moduleController extends Controller
      */
     public function create()
     {
-        $profs=Prof::all();
-        $classes=Classe::all();
+        $profs = Prof::all();
+        $classes = Classe::all();
 
-        
-        return view('dashboard.components.module.addModule',[
-            'profs'=>$profs,
-            'classes'=>$classes
+
+        return view('dashboard.components.module.addModule', [
+            'profs' => $profs,
+            'classes' => $classes
         ]);
-
     }
 
     /**
@@ -41,7 +42,7 @@ class moduleController extends Controller
     {
         Module::create($request->all());
 
-        dd('Crée');
+        return redirect()->route('module.liste');
     }
 
     /**
@@ -49,7 +50,7 @@ class moduleController extends Controller
      */
     public function show(string $id)
     {
-        $module=Module::findOrFail($id);
+        $module = Module::findOrFail($id);
 
         return view('dashboard.components.module.historiqueModule');
     }
@@ -59,7 +60,7 @@ class moduleController extends Controller
      */
     public function edit(string $id)
     {
-        $module=Module::findOrFail($id);
+        $module = Module::findOrFail($id);
     }
 
     /**
@@ -67,10 +68,9 @@ class moduleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $module=Module::findOrFail($id);
-        
-        $module->update($request->all());
+        $module = Module::findOrFail($id);
 
+        $module->update($request->all());
     }
 
     /**
@@ -78,7 +78,7 @@ class moduleController extends Controller
      */
     public function destroy(string $id)
     {
-        $module=Module::findOrFail($id);
+        $module = Module::findOrFail($id);
 
         $module->destroy();
     }
@@ -88,12 +88,12 @@ class moduleController extends Controller
     {
         $type = $request->input('type');
         $classe = $request->input('classe');
-        
+
         // Rechercher le tarif en fonction du type et de la classe
         $tarif = Tarif::where('type', $type)
             ->where('classe_id', $classe)
             ->first();
-        
+
         // Vérification si un tarif a été trouvé
         if ($tarif) {
             $cout_horaire = $tarif->cout_horaire;
@@ -102,14 +102,10 @@ class moduleController extends Controller
             $cout_horaire = 0; // une valeur par défaut si aucun tarif n'est trouvé
             $tarif_id = null; // ID du coût horaire non trouvé
         }
-        
+
         return response()->json([
             'tarif' => $cout_horaire,
             'tarif_id' => $tarif_id, // Inclure l'ID du coût horaire
         ]);
     }
-    
-
 }
-
-

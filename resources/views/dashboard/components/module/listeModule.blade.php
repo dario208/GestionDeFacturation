@@ -23,14 +23,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                     
+                        @foreach ($modules as $module)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $module->nom }}</td>
+                                <td>{{ $module->heure_globale }}</td>
+                                <td>{{ ($module->tarif)->type }}</td>
+                                <td>{{ ($module->classe)->niveau }}</td>
+                                <td>{{ ($module->tarif)->cout_horaire }}</td>
+                                <td>{{ ($module->prof)->nom }} {{ ($module->prof)->prenom }}</td>
+
                                 <td>
                                     <div class="dropdown">
                                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
@@ -38,14 +39,13 @@
                                             <i class="bx bx-dots-vertical-rounded"></i>
                                         </button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href=""><i
-                                                    class="bx bx-edit-alt me-1"></i> Edit</a>
+                                            <a class="dropdown-item" href=""><i class="bx bx-edit-alt me-1"></i>
+                                                Edit</a>
 
                                             <a class="dropdown-item" href=""><i
                                                     class="bx bx-edit-alt me-1"></i>Show</a>
 
-                                            <form method="POST" action=""
-                                                style="display:inline;">
+                                            <form method="POST" action="" style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="dropdown-item"><i
@@ -56,9 +56,7 @@
                                     </div>
                                 </td>
                             </tr>
-                 
-
-
+                        @endforeach
                     </tbody>
                 </table>
             </div>

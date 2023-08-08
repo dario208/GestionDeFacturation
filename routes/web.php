@@ -46,7 +46,6 @@ Route::middleware(['auth', 'user-access:prof'])->group(function () {
 
             Route::get('/', 'dashboardProf')->name('dashboard.Prof');
             Route::get('profil', 'update')->name('dahboard.Prof.Profil');
-
         });
     });
 });
@@ -75,6 +74,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
             Route::get('liste', 'index')->name('module.liste');
             Route::get('add', 'create')->name('module.add');
+            Route::post('add', 'store')->name('module.store');
+            Route::get('/get-tarif', 'getTarif');
             Route::get('historique', 'show')->name('module.historique');
         });
     });
