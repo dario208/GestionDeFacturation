@@ -40,46 +40,47 @@
 
                     </div>
                     <div class="card-body">
+                        <div class="card-body">
 
-                        <div class="mb-3">
-                            <label class="form-label" for="basic-icon-default-fullname">Nom</label>
-                            <div class="input-group input-group-merge">
-                               <span id="basic-icon-default-fullname2" class="input-group-text"><i
-                                        class="bx bx-user"></i></span>
-                                <input type="text" class="form-control" name="name" id="name"
-                                    placeholder="John Doe" aria-label="John Doe"
-                                    aria-describedby="basic-icon-default-fullname2" />
+                            <div class="mb-3">
+                                <label class="form-label" for="basic-icon-default-fullname">Nom</label>
+                                <div class="input-group input-group-merge">
+                                <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                                            class="bx bx-user"></i></span>
+                                    <input type="text" class="form-control" name="name" id="name"
+                                        placeholder="John Doe" aria-label="John Doe"
+                                        aria-describedby="basic-icon-default-fullname2" />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="mb-3">
-                            <label class="form-label" for="basic-icon-default-email">Email</label>
-                            <div class="input-group input-group-merge">
-                                <span class="input-group-text"><i class="bx bx-envelope"></i></span>
-                                <input type="email" name="email" id="email" class="form-control"
-                                    placeholder="john.doe" aria-label="john.doe"
-                                    aria-describedby="basic-icon-default-email2" />
-                                <span id="basic-icon-default-email2" class="input-group-text">@example.com</span>
+                            <div class="mb-3">
+                                <label class="form-label" for="basic-icon-default-email">Email</label>
+                                <div class="input-group input-group-merge">
+                                    <span class="input-group-text"><i class="bx bx-envelope"></i></span>
+                                    <input type="email" name="email" id="email" class="form-control"
+                                        placeholder="john.doe" aria-label="john.doe"
+                                        aria-describedby="basic-icon-default-email2" />
+                                    <span id="basic-icon-default-email2" class="input-group-text">@example.com</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="basic-icon-default-phone">Password</label>
-                            <div class="input-group input-group-merge">
-                                <span id="basic-icon-default-phone2" class="input-group-text"><i
-                                        class="bx bx-phone"></i></span>
-                                <input type="password" name="password" id="password" class="form-control phone-mask"
-                                    placeholder="***********" aria-label="658 799 8941"
-                                    aria-describedby="basic-icon-default-phone2" />
+                            <div class="mb-3">
+                                <label class="form-label" for="basic-icon-default-phone">Password</label>
+                                <div class="input-group input-group-merge">
+                                    <span id="basic-icon-default-phone2" class="input-group-text"><i
+                                            class="bx bx-phone"></i></span>
+                                    <input type="password" name="password" id="password" class="form-control phone-mask"
+                                        placeholder="***********" aria-label="658 799 8941"
+                                        aria-describedby="basic-icon-default-phone2" />
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="text-start">
-            <button type="submit" class="btn btn-dark">Envoyer</button>
-        </div>
-        </form>
+            <div class="text-start">
+                <button type="submit" class="btn btn-dark">Envoyer</button>
+            </div>
+            </form>
     </div>
 @endsection
