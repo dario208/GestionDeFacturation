@@ -5,8 +5,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\profController;
 use App\Http\Controllers\dashboardController;
-use App\Http\Controllers\composant\AdminController;
-use Illuminate\Support\Facades\Route;
 
 
 /*
@@ -43,28 +41,25 @@ Route::get('/', function () {
 Route::middleware(['auth', 'user-access:prof'])->group(function () {
 
     Route::get('/dahboardProf', [dashboardController::class, 'dahboardProf'])->name('dahboard.Prof');
-    Route::controller(ProfController::class)->group(function (){
-        Route::get('/profils', 'toprofil')->name('profil');
-        
-
-    });
 });
 
 //Admin users Route
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('/dashboardAdmin', [dashboardController::class, 'dashboardAdmin'])->name('dashboard.Admin');
-    // Route::get('/profs', [AdminController::class, 'tolist'])->name('liste');
-    // Route::get('/registre', [AdminController::class, 'toregistration'])->name('registration');
-    // Route::get('/historiques', [AdminController::class, 'tohistorique'])->name('historique');
 
-    Route::controller(AdminController::class)->group(function (){
-        Route::get('/profs', 'tolist')->name('liste');
-        Route::get('/registre', 'toregistration')->name('registration');
-        Route::get('/historiques', 'tohistorique')->name('historique');
+    // ------------------------ professeur -------------------------------//
+    Route::controller(profController::class)->group(function () {
+        Route::prefix('prof')->group(function () {
 
+            Route::get('liste', 'index')->name('prof.liste');
+            Route::get('add', 'create')->name('prof.add');
+            Route::get('show/{id}', 'show')->name('prof.show');
+            Route::get('edit/{id}', 'edit')->name('prof.edit');
+            Route::post('edit/{id}', 'update')->name('prof.update');
+            Route::delete('delete/{id}','destroy')->name('prof.delete');
+        });
     });
-    
 });
 
 //comptable users Route
@@ -75,4 +70,3 @@ Route::middleware(['auth', 'user-access:comptable'])->group(function () {
 
 
 require __DIR__ . '/auth.php';
-require __DIR__ . '/PocketRoute/labo.php';

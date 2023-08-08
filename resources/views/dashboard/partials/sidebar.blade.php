@@ -131,9 +131,9 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
             <!-- Cards -->
             <li class="menu-item">
-                <a href="{{ route('historique') }}" class="menu-link">
+                <a href="cards-basic.html" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">Historique</div>
+                    <div data-i18n="Basic">Cards</div>
                 </a>
             </li>
             <!-- User interface -->
@@ -274,17 +274,17 @@
             <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons bx bx-detail"></i>
-                    <div data-i18n="Form Elements">Modules</div>
+                    <div data-i18n="Form Elements">Form Elements</div>
                 </a>
                 <ul class="menu-sub">
-                    <li class="menu-item active">
+                    <li class="menu-item">
                         <a href="forms-basic-inputs.html" class="menu-link">
                             <div data-i18n="Basic Inputs">Basic Inputs</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="{{ route('ajout') }}" class="menu-link">
-                            <div data-i18n="Input groups">Ajout</div>
+                        <a href="forms-input-groups.html" class="menu-link">
+                            <div data-i18n="Input groups">Input groups</div>
                         </a>
                     </li>
                 </ul>
@@ -296,9 +296,8 @@
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item">
-                        <a href="{{ route('liste') }}" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-table"></i>
-                            <div data-i18n="Tables">Listes des professeurs</div>
+                        <a href="form-layouts-vertical.html" class="menu-link">
+                            <div data-i18n="Vertical Form">Vertical Form</div>
                         </a>
                     </li>
                     <li class="menu-item">
