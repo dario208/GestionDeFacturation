@@ -26,7 +26,7 @@ class moduleController extends Controller
         $profs=Prof::all();
         $classes=Classe::all();
 
-        // return view('dashboard.components.module.addModule');
+        
         return view('dashboard.components.module.addModule',[
             'profs'=>$profs,
             'classes'=>$classes

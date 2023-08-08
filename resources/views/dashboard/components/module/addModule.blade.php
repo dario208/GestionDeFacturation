@@ -11,27 +11,25 @@
                 <div class="mb-3 row">
                     <label for="html5-text-input" class="col-md-2 col-form-label ">Nom</label>
                     <div class="col-md-10">
-                        <input class="form-control" type="text" value="" id="" />
+                        <input class="form-control" type="text" name="nom" id="nom" />
                     </div>
                 </div>
 
                 <div class="mb-3 row">
-                    <label for="html5-text-input" class="col-md-2 col-form-label">H-Globale</label>
+                    <label for="heure_globale" class="col-md-2 col-form-label">H-Globale</label>
                     <div class="col-md-10">
-                        <input class="form-control" type="text" value="" id="" />
+                        <input class="form-control" type="text" name="heure_globale" id="heure_globale" />
                     </div>
                 </div>
 
                 <div class="mb-3 row">
-                    <label for="defaultSelect" class="col-md-2 col-form-label">Classe</label>
+                    <label for="classe" class="col-md-2 col-form-label">Classe</label>
                     <div class="col-md-10">
-                        <select id="defaultSelect" class="form-select">
+                        <select name="classe_id" id="classe" class="form-select">
                             <option>Default select</option>
-                            <option value="1">L1</option>
-                            <option value="2">L2</option>
-                            <option value="3">L3</option>
-                            <option value="4">M1</option>
-                            <option value="5">M2</option>
+                            @foreach ($classes as $classe)
+                                 <option value="{{$classe->id}}">{{ $classe->niveau}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -39,36 +37,37 @@
                     <label for="html5-text-input" class="col-md-2 col-form-label">Type</label>
 
                     <div class="form-check form-check-inline mt-3">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                            value="option1" checked />
+                        <input class="form-check-input" type="radio" name="type" id="type"
+                            value="base" checked />
                         <label class="form-check-label" for="inlineRadio1">Matière de base</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                            value="option2" />
+                        <input class="form-check-input" type="radio" name="type" id="type"
+                            value="complementaire" />
                         <label class="form-check-label" for="inlineRadio2">Complementaire</label>
                     </div>
 
                 </div>
 
                 <div class="mb-3 row">
-                    <label for="html5-text-input" class="col-md-2 col-form-label">Tarif</label>
+                    <label for="tarif" class="col-md-2 col-form-label">Tarif</label>
                     <div class="col-md-10">
-                        <input class="form-control" type="text" id=""
-                            placeholder="Readonly input here..." readonly />
+                        <input class="form-control" type="text" id="tarif"
+                         name="cout_horaire" readonly />
+                        <input type="hidden" id="tarif_id" name="tarif_id">
                     </div>
                 </div>
 
                 <div class="mb-3 row">
-                    <label for="defaultSelect" class="col-md-2 col-form-label">Prof</label>
+                    <label for="prof" class="col-md-2 col-form-label">Prof</label>
                     <div class="col-md-10">
-                        <select id="defaultSelect" class="form-select">
+                        <select  name="prof_id" id="prof" class="form-select">
                             <option>Default select</option>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                            <option value="4"></option>
-                            <option value="5"></option>
+
+                            @foreach ($profs as $prof)
+                                 <option value="{{ $prof->id }}">{{ $prof->nom }} {{ $prof->prenom }}</option>
+                            @endforeach
+                            
                         </select>
                     </div>
                 </div>
@@ -76,8 +75,31 @@
         </div>
 
         <div class="text-start">
-            <button type="submit" class="btn btn-dark">Submit</button>
+            <button type="submit" class="btn btn-dark">Créer le module</button>
         </div>
 
     </div>
+
+
+ <!-- JavaScript pour la mise à jour du tarif -->
+        <script>
+            $(document).ready(function () {
+                $('#type, #classe').on('change', function () {
+                    var type = $('input[name="type"]:checked').val();
+                    var classe = $('#classe').val();
+    
+                    // Requête Ajax pour obtenir le tarif en fonction du type et de la classe
+                    $.ajax({
+                        method: 'GET',
+                        url: '/get-tarif', // URL de la route qui renvoie le tarif
+                        data: { type: type, classe: classe },
+                        success: function (data) {
+                            $('#tarif').val(data.tarif);
+                            $('#tarif_id').val(data.tarif_id); // Mettez à jour l'ID du coût horaire
+                        }
+                    });
+                });
+            });
+        </script>
+
 @endsection
