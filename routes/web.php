@@ -1,9 +1,11 @@
 <?php
 
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Request;
+use App\Http\Controllers\profController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\composant\AdminController;
-use App\Http\Controllers\composant\ProfController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,6 +19,21 @@ use Illuminate\Support\Facades\Route;
 | hiassa fgn anao , entre temps ny zou? 
 Guzzle Http
 */
+
+function active($route)
+{
+    if (is_array($route)) {
+        return in_array(Request::path(), $route) ? 'active' : '';
+    } else {
+        return Request::path() == $route ? 'active' : '';
+    }
+}
+
+function active_open($openRoutes)
+{
+    return is_array($openRoutes) && in_array(Request::path(), $openRoutes) ? 'active open' : '';
+}
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -45,8 +62,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::get('/profs', 'tolist')->name('liste');
         Route::get('/registre', 'toregistration')->name('registration');
         Route::get('/historiques', 'tohistorique')->name('historique');
-        Route::get('/modules', 'tomodule')->name('module');
-        Route::get('/ajouts', 'toedit')->name('ajout');
 
     });
     
@@ -56,8 +71,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 Route::middleware(['auth', 'user-access:comptable'])->group(function () {
 
     Route::get('/dahsboardComptable', [dashboardController::class, 'dahsboardComptable'])->name('dahsboard.Comptable');
-
-
 });
 
 
