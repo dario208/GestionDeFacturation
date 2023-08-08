@@ -32,20 +32,19 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-xl">
                 <div class="card mb-4">
-                    <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="card-header text-center ">
                         <h5 class="mb-0">Register</h5>
-                        <small class="text-muted float-end">Merged input group</small>
+
                     </div>
                     <div class="card-body">
 
-                    
                         <div class="mb-3">
-                            <label class="form-label" for="basic-icon-default-fullname">Name</label>
+                            <label class="form-label" for="basic-icon-default-fullname">Nom</label>
                             <div class="input-group input-group-merge">
-                                <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                               <span id="basic-icon-default-fullname2" class="input-group-text"><i
                                         class="bx bx-user"></i></span>
                                 <input type="text" class="form-control" name="name" id="name"
                                     placeholder="John Doe" aria-label="John Doe"
@@ -79,7 +78,7 @@
             </div>
         </div>
         <div class="text-start">
-            <button type="submit" class="btn btn-success">Envoyer</button>
+            <button type="submit" class="btn btn-dark">Envoyer</button>
         </div>
         </form>
     </div>
