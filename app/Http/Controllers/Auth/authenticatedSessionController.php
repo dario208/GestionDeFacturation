@@ -35,9 +35,9 @@ class authenticatedSessionController extends Controller
             if (auth()->user()->type == 'admin') {
                 return redirect()->route('dashboard.Admin');
             } else if (auth()->user()->type == 'comptable') {
-                return redirect()->route('dahsboard.Comptable');
+                return redirect()->route('dashboard.Comptable');
             } else {
-                return redirect('/dahboardProf');
+                return redirect('/dashboardProf');
             }
         } else {
             return redirect()->route('login')->with('error', 'Email-Adrress and  Password are  wrong');

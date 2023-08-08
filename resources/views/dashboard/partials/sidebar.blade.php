@@ -67,14 +67,14 @@
                 </li>
             @elseif(Auth::user()->type == 'comptable')
                 <li class="menu-item {{ active(['dashboardComptable']) }}">
-                    <a href="{{ route('dahsboard.Comptable') }}" class="menu-link">
+                    <a href="{{ route('dashboard.Comptable') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
                         <div data-i18n="Analytics">Dashboard</div>
                     </a>
                 </li>
             @elseif(Auth::user()->type == 'prof')
                 <li class="menu-item {{ active(['dashboardProf']) }}">
-                    <a href="{{ route('dahboard.Prof') }}" class="menu-link">
+                    <a href="{{ route('dashboard.Prof') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
                         <div data-i18n="Analytics">Dashboard</div>
                     </a>
