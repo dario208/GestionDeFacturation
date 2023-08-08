@@ -71,9 +71,9 @@
                     <br>
                     <div class="card-body">
                         <div class="mb-4">
-                            <h6>Professeur: John Doe</h6>
-                            <p>Email: john.doe@example.com</p>
-                            <p>Téléphone: 123-456-7890</p>
+                            <h6>Professeur: Juan Ranaivoson</h6>
+                            <p>Email: juan@gmail.com</p>
+                            <p>Téléphone: 032 98 933 12</p>
                         </div>
                         <table class="table">
                             <thead>
