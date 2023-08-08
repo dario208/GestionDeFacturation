@@ -14,27 +14,14 @@ use Illuminate\Http\Request;
 class moduleController extends Controller
 {
 
-    public function index(): View
-    {
-        return view('dashboard.components.module.listeModule');
-    }
-
-    public function create(): View
-    {
-        return view('dashboard.components.module.addModule');
-    }
-
-    public function show()
-    {
-        return view('dashboard.components.module.historiqueModule');
-    }
-
   /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $modules=Module::all() ;
+
+        return view('dashboard.components.module.listeModule');
     }
 
     /**
@@ -45,6 +32,7 @@ class moduleController extends Controller
         $profs=Prof::all();
         $classes=Classe::all();
 
+        // return view('dashboard.components.module.addModule');
         return view('Pocket.createModule',[
             'profs'=>$profs,
             'classes'=>$classes
@@ -66,6 +54,8 @@ class moduleController extends Controller
     public function show(string $id)
     {
         $module=Module::findOrFail($id);
+
+        return view('dashboard.components.module.historiqueModule');
     }
 
     /**
