@@ -55,7 +55,7 @@
                         <label for="tarif" class="col-md-2 col-form-label">Tarif</label>
                         <div class="col-md-10">
                             <input class="form-control" type="text" id="tarif" name="cout_horaire" readonly />
-                            <input type="hidden" id="tarif_id" name="tarif_id">
+                            <input type="hidden" id="tarif_id" name="tarif_id" >
                         </div>
                     </div>
 
@@ -96,7 +96,7 @@
                 // Requête Ajax pour obtenir le tarif en fonction du type et de la classe
                 $.ajax({
                     method: 'GET',
-                    url: '/get-tarif', // URL de la route qui renvoie le tarif
+                    url: '{{ route('get-tarif') }}', // URL de la route qui renvoie le tarif
                     data: {
                         type: type,
                         classe: classe
@@ -104,6 +104,10 @@
                     success: function(data) {
                         $('#tarif').val(data.tarif);
                         $('#tarif_id').val(data.tarif_id); // Mettez à jour l'ID du coût horaire
+
+                         // Affichage des valeurs dans la console
+                        console.log('Tarif mis à jour : ' + data.tarif);
+                        console.log('ID du coût horaire mis à jour : ' + data.tarif_id);
                     }
                 });
             });

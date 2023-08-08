@@ -83,7 +83,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
             Route::get('liste', 'index')->name('module.liste');
             Route::get('add', 'create')->name('module.add');
             Route::post('add', 'store')->name('module.store');
-            Route::get('/get-tarif', 'getTarif');
+            Route::get('/get-tarif', 'getTarif')->name('get-tarif');;
             Route::get('historique', 'show')->name('module.historique');
         });
     });
