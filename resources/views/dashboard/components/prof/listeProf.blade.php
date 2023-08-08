@@ -65,17 +65,15 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h2 class="card-title badge bg-secondary fs-5">Facture</h2>
-                    </div>
+                    
+                        <h2 class="card-header badge bg-info fs-3">Facture</h2>
+                        
+                    <br>
                     <div class="card-body">
                         <div class="mb-4">
-                            <h6> 
-                                <span class="badge bg-info fs-6">Professeur</span> <span class="fs-5">: Ranaivoson Juan</span>
-                                
-                            </h6>
-                            <p><span class="badge bg-info fs-6">Email</span> <span class="fs-5">: juan@gmail.com</span></p>
-                            <p><span class="badge bg-info fs-6">Téléphone</span> <span class="fs-5">: 032 98 933 12</span></p>
+                            <h6>Professeur: John Doe</h6>
+                            <p>Email: john.doe@example.com</p>
+                            <p>Téléphone: 123-456-7890</p>
                         </div>
                         <table class="table">
                             <thead>
@@ -138,17 +136,17 @@
         
         <!-- Basic Bootstrap Table -->
         <div class="card p-3">
-            <h5 class="card-header">Suivie de Facture</h5>
+            <h5 class="card-header badge bg-info fs-4">Suivie de Facture</h5>
             <div class="table-responsive text-nowrap">
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr class="bg-primary">
-                            <th>Nom</th>
-                            <th>Prenom</th>
-                            <th>Montant Payé</th>
-                            <th>Montant Restant</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th class="text-white fs-7">Nom</th>
+                            <th class="text-white fs-7">Prenom</th>
+                            <th class="text-white fs-7">Montant Payé</th>
+                            <th class="text-white fs-7">Montant Restant</th>
+                            <th class="text-white fs-7">Status</th>
+                            <th class="text-white fs-7">Action</th>
 
                         </tr>
                     </thead>
