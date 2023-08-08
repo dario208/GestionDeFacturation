@@ -133,6 +133,66 @@
             </div>
         </div>
     </div>
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Suivie de Facture</h4>
+        
+        <!-- Basic Bootstrap Table -->
+        <div class="card p-3">
+            <h5 class="card-header">Professeur</h5>
+            <div class="table-responsive text-nowrap">
+                <table id="example" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Montant Payé</th>
+                            <th>Montant Restant</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($profs as $prof)
+                            <tr>
+                                <td>{{ $prof->nom }}</td>
+                                <td>{{ $prof->prenom }}</td>
+                                <td>120 000 Ar</td>
+                                <td>0 Ar</td>
+                                <td><span class="badge bg-success">Payé</span></td>
+
+                                <td>
+                                    <div class="dropdown">
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                            data-bs-toggle="dropdown">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{{ route('prof.edit', ['id' => $prof->id]) }}"><i
+                                                    class="bx bx-edit-alt me-1"></i> Edit</a>
+
+                                            <a class="dropdown-item" href="{{ route('prof.show', ['id' => $prof->id]) }}"><i
+                                                    class="bx bx-edit-alt me-1"></i>Show</a>
+
+                                            <form method="POST" action="{{ route('prof.delete', ['id' => $prof->id]) }}"
+                                                style="display:inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="dropdown-item"><i
+                                                        class="bx bx-trash me-1"></i>Delete</button>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
     
     
