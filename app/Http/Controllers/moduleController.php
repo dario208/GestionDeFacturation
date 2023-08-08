@@ -17,6 +17,8 @@ class moduleController extends Controller
     public function index()
     {
         $modules=Module::all() ;
+
+        return view('dashboard.components.module.listeModule');
     }
 
     /**
@@ -27,6 +29,7 @@ class moduleController extends Controller
         $profs=Prof::all();
         $classes=Classe::all();
 
+        // return view('dashboard.components.module.addModule');
         return view('Pocket.createModule',[
             'profs'=>$profs,
             'classes'=>$classes
@@ -48,6 +51,8 @@ class moduleController extends Controller
     public function show(string $id)
     {
         $module=Module::findOrFail($id);
+
+        return view('dashboard.components.module.historiqueModule');
     }
 
     /**
