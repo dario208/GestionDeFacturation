@@ -11,10 +11,12 @@ class historiqueController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(string $id)
     {
-        
-        return view('dashboard.components.module.historiqueModule');
+        $historiques = Historique::where('module_id', $id)->get();
+        return view('dashboard.components.module.historiqueModule', [
+            'historiques' => $historiques,
+        ]);
     }
 
     /**
@@ -22,9 +24,9 @@ class historiqueController extends Controller
      */
     public function create(string $id)
     {
-        
-        return view('dashboard.components.prof.heureProf',[
-            'module_id'=>$id,
+
+        return view('dashboard.components.prof.heureProf', [
+            'module_id' => $id,
         ]);
     }
 
@@ -33,13 +35,14 @@ class historiqueController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         Historique::create([
-            'date'=>$request->date,
-            'heure_de_debut'=>$request->heure_de_debut,
-            'heure_de_fin'=>$request->heure_de_fin,
-            'module_id'=>$request->module_id,
+            'date' => $request->date,
+            'heure_de_debut' => $request->heure_de_debut,
+            'heure_de_fin' => $request->heure_de_fin,
+            'module_id' => $request->module_id,
         ]);
+        return redirect()->route('historique.liste',["id"=>($request->module_id)]);
     }
 
     /**

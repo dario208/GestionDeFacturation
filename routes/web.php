@@ -53,16 +53,16 @@ Route::middleware(['auth', 'user-access:prof'])->group(function () {
     Route::controller(historiqueController::class)->group(function () {
         Route::prefix('historique')->group(function () {
 
-            Route::get('/liste', 'index')->name('historique.liste');
-            Route::get('/saisie', 'create')->name('historique.saisie');
-            Route::post('/saisie', 'store');
+            Route::get('/liste/{id}', 'index')->name('historique.liste');
+            Route::get('/saisie/{id}', 'create')->name('historique.saisie');
+            Route::post('/saisie/{id}', 'store');
         });
     });
 
     // ------------------------ Module -------------------------------//
     Route::controller(moduleController::class)->group(function () {
         Route::prefix('module')->group(function () {
-            Route::get('voir', 'show')->name('module.show');
+            Route::get('voir', 'showByProf')->name('module.showByProf');
         });
     });
 });
@@ -101,7 +101,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::controller(historiqueController::class)->group(function () {
         Route::prefix('historique')->group(function () {
 
-            Route::get('/liste', 'index')->name('historique.liste');
+            Route::get('/listes', 'index')->name('historique.listes');
         });
     });
 });
