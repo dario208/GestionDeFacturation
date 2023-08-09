@@ -48,12 +48,21 @@ Route::middleware(['auth', 'user-access:prof'])->group(function () {
             Route::get('profil', 'update')->name('dahboard.Prof.Profil');
         });
     });
+    // ------------------------ Historique -------------------------------//
+
     Route::controller(historiqueController::class)->group(function () {
         Route::prefix('historique')->group(function () {
 
-            Route::get('/saisie', 'create')->name('heure.saisie');
-            
+            Route::get('/liste', 'index')->name('historique.liste');
+            Route::get('/saisie', 'create')->name('historique.saisie');
+            Route::post('/saisie', 'store');
+        });
+    });
 
+    // ------------------------ Module -------------------------------//
+    Route::controller(moduleController::class)->group(function () {
+        Route::prefix('module')->group(function () {
+            Route::get('voir', 'show')->name('module.show');
         });
     });
 });
@@ -83,8 +92,16 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
             Route::get('liste', 'index')->name('module.liste');
             Route::get('add', 'create')->name('module.add');
             Route::post('add', 'store')->name('module.store');
-            Route::get('/get-tarif', 'getTarif')->name('get-tarif');;
-            Route::get('historique', 'show')->name('module.historique');
+            Route::get('/get-tarif', 'getTarif')->name('get-tarif');
+        });
+    });
+
+    // ------------------------ Historique -------------------------------//
+
+    Route::controller(historiqueController::class)->group(function () {
+        Route::prefix('historique')->group(function () {
+
+            Route::get('/liste', 'index')->name('historique.liste');
         });
     });
 });
@@ -95,6 +112,10 @@ Route::middleware(['auth', 'user-access:comptable'])->group(function () {
     Route::get('/dashboardComptable', [dashboardController::class, 'dashboardComptable'])->name('dashboard.Comptable');
 });
 
+
+// Route::middleware(['auth', 'admin_or_prof'])->group(function () {
+
+// });
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/Pocket/labo.php';
