@@ -2,7 +2,7 @@
     <div class="app-brand demo">
         <a href="#" class="app-brand-link">
             <span class="app-brand-logo demo">
-                <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                {{-- <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
                         <path
@@ -43,9 +43,9 @@
                             </g>
                         </g>
                     </g>
-                </svg>
+                </svg>  --}}
             </span>
-            <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+            <span class="app-brand-text demo menu-text fw-bolder ms-2">Logo-name</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -62,28 +62,28 @@
                 <li class="menu-item {{ active(['dashboardAdmin']) }}">
                     <a href="{{ route('dashboard.Admin') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                        <div data-i18n="Analytics">Dashboard</div>
+                        <div data-i18n="Analytics">Tableau de bord</div>
                     </a>
                 </li>
             @elseif(Auth::user()->type == 'comptable')
                 <li class="menu-item {{ active(['dashboardComptable']) }}">
                     <a href="{{ route('dashboard.Comptable') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                        <div data-i18n="Analytics">Dashboard</div>
+                        <div data-i18n="Analytics">Tableau de bord</div>
                     </a>
                 </li>
             @elseif(Auth::user()->type == 'prof')
                 <li class="menu-item {{ active(['dashboardProf']) }}">
                     <a href="{{ route('dashboard.Prof') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                        <div data-i18n="Analytics">Dashboard</div>
+                        <div data-i18n="Analytics">Tableau de bord</div>
                     </a>
                 </li>
             @endif
         @endauth
         @if (Auth::user()->type === 'admin')
             <li class="menu-header small text-uppercase">
-                <span class="menu-header-text">Pages</span>
+                <span class="menu-header-text">Onglets</span>
             </li>
             <li class="menu-item {{ active_open(['prof/liste', 'prof/add']) }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -121,7 +121,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="menu-item">
+            {{-- <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons bx bx-cube-alt"></i>
                     <div data-i18n="Misc">Misc</div>
@@ -138,12 +138,12 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
         @elseif (Auth::check() && Auth::user()->type === 'comptable')
             <!-- Components -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Onglets</span></li>
             <!-- Cards -->
-            <li class="menu-item">
+            {{-- <li class="menu-item">
                 <a href="cards-basic.html" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-collection"></i>
                     <div data-i18n="Basic">Cards</div>
@@ -279,12 +279,12 @@
                     <i class="menu-icon tf-icons bx bx-crown"></i>
                     <div data-i18n="Boxicons">Boxicons</div>
                 </a>
-            </li>
+            </li> --}}
         @else
             <!-- Forms & Tables -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Onglets</span></li>
             <!-- Forms -->
-            <li class="menu-item">
+            {{-- <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons bx bx-detail"></i>
                     <div data-i18n="Form Elements">Form Elements</div>
@@ -326,7 +326,7 @@
                     <i class="menu-icon tf-icons bx bx-table"></i>
                     <div data-i18n="Tables">Tables</div>
                 </a>
-            </li>
+            </li> --}}
         @endif
     </ul>
 </aside>

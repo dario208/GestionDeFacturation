@@ -11,7 +11,7 @@
         <div class="navbar-nav align-items-center">
             <div class="nav-item d-flex align-items-center">
                 <i class="bx bx-search fs-4 lh-0"></i>
-                <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
+                <input type="text" class="form-control border-0 shadow-none" placeholder="Rechercher..."
                     aria-label="Search..." />
             </div>
         </div>
@@ -37,7 +37,7 @@
                         <li>
                             <a class="dropdown-item" href="#">
                                 <i class="bx bx-user me-2"></i>
-                                <span class="align-middle">My Profile</span>
+                                <span class="align-middle">Mon Profil</span>
                             </a>
                         </li>
                     @endif
@@ -46,7 +46,7 @@
                     <li>
                         <a class="dropdown-item" href="#">
                             <i class="bx bx-cog me-2"></i>
-                            <span class="align-middle">Settings</span>
+                            <span class="align-middle">Paramètre</span>
                         </a>
                     </li>
                
@@ -57,7 +57,7 @@
                         <a class="dropdown-item" href="#"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <i class="bx bx-power-off me-2"></i>
-                            <span class="align-middle">Log Out</span>
+                            <span class="align-middle">Deconnexion</span>
                         </a>
                         <form id="logout-form" method="POST" action="{{ route('logout') }}" style="display: none;">
                             @csrf

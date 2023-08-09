@@ -1,12 +1,12 @@
 @extends('layouts.template')
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms /</span> Basic Inputs</h4>
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Enregistrement du module</h4>
 
 
         <!-- HTML5 Inputs -->
         <div class="card mb-4">
-            <h5 class="card-header">HTML5 Inputs</h5>
+            <h5 class="card-header fw-bold">Module</h5>
             <div class="card-body">
                 <form method="post" action="{{route('module.store')}}">
                     @csrf
@@ -28,7 +28,7 @@
                         <label for="classe" class="col-md-2 col-form-label">Classe</label>
                         <div class="col-md-10">
                             <select name="classe_id" id="classe" class="form-select">
-                                <option>Default select</option>
+                                <option>Par defaut</option>
                                 @foreach ($classes as $classe)
                                     <option value="{{ $classe->id }}">{{ $classe->niveau }}</option>
                                 @endforeach
@@ -63,7 +63,7 @@
                         <label for="prof" class="col-md-2 col-form-label">Prof</label>
                         <div class="col-md-10">
                             <select name="prof_id" id="prof" class="form-select">
-                                <option>Default select</option>
+                                <option>Par defaut</option>
 
                                 @foreach ($profs as $prof)
                                     <option value="{{ $prof->id }}">{{ $prof->nom }} {{ $prof->prenom }}</option>
