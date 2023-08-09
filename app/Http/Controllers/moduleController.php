@@ -124,5 +124,6 @@ class moduleController extends Controller
         return view('dashboard.components.prof.mesModules', [
             'modules' => $modules,
         ]);
+
     }
 }
