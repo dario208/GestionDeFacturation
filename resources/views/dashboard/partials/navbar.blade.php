@@ -27,7 +27,15 @@
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     @if (auth()->check())
-                        <div> {{ auth()->user()->name }}</div>
+                        <div> {{ auth()->user()->name }} 
+                            @if(Auth::user()->type == 'admin')
+                                <img src="{{asset('images/secretaire.png')}}" alt="Dashboard Icon" width="50px" height="50px">
+                            @elseif(Auth::user()->type == 'comptable')
+                                <img src="{{asset('images/compta.png')}}" alt="Dashboard Icon" width="50px" height="50px">
+                            @elseif(Auth::user()->type == 'prof')
+                                <img src="{{asset('images/prof.png')}}" alt="Dashboard Icon" width="50px" height="50px">
+                            @endif
+                        </div>
                     @endif
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
