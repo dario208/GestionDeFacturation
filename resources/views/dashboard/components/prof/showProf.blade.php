@@ -24,6 +24,7 @@
         </div>
 
         <div class="row mb-5">
+
             @foreach ($prof->modules as $module)
                 <div class="col-md-6 col-lg-4">
                     <div class="card text-center mb-3">
@@ -33,6 +34,7 @@
                             <h5 class="card-text"><span>20</span>/<span>{{ $module->heure_globale }}</span></h5>
                             <a href="{{ route('module.historique') }}" class="btn btn-secondary">Historique</a>
                         </div>
+
                     </div>
                 </div>
             @endforeach

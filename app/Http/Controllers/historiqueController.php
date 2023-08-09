@@ -13,16 +13,19 @@ class historiqueController extends Controller
      */
     public function index()
     {
-        //
+        
+        return view('dashboard.components.module.historiqueModule');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $id)
     {
         
-        return view('dashboard.components.prof.heureProf');
+        return view('dashboard.components.prof.heureProf',[
+            'module_id'=>$id,
+        ]);
     }
 
     /**
@@ -31,7 +34,12 @@ class historiqueController extends Controller
     public function store(Request $request)
     {
         
-        Historique::create($request->all());
+        Historique::create([
+            'date'=>$request->date,
+            'heure_de_debut'=>$request->heure_de_debut,
+            'heure_de_fin'=>$request->heure_de_fin,
+            'module_id'=>$request->module_id,
+        ]);
     }
 
     /**
