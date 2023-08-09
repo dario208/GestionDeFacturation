@@ -7,8 +7,9 @@ use App\Models\Tarif;
 use App\Models\Classe;
 use App\Models\Module;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Auth;
+
 
 class moduleController extends Controller
 {

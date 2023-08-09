@@ -12,17 +12,12 @@ class historiqueController extends Controller
      * Display a listing of the resource.
      */
     public function index(string $id)
-    public function index(string $id)
     {
         $historiques = Historique::where('module_id', $id)->get();
         return view('dashboard.components.module.historiqueModule', [
             'historiques' => $historiques,
         ]);
-        $historiques=Historique::where('module_id', $id)->get();
-        
-        return view('dashboard.components.module.historiqueModule',[
-            'historiques'=>$historiques ,
-        ]);
+      
     }
 
     /**
