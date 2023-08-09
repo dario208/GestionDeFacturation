@@ -1,7 +1,7 @@
 @extends('layouts.template')
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Liste des professeurs</h4>
         <div class=" text-end mb-4">
             <a class="btn btn-primary" href="{{ route('prof.add') }}">ajouter</a>
         </div>
@@ -35,17 +35,17 @@
                                         </button>
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="{{ route('prof.edit', ['id' => $prof->id]) }}"><i
-                                                    class="bx bx-edit-alt me-1"></i> Edit</a>
+                                                    class="bx bx-edit-alt me-1"></i> Editer</a>
 
                                             <a class="dropdown-item" href="{{ route('prof.show', ['id' => $prof->id]) }}"><i
-                                                    class="bx bx-edit-alt me-1"></i>Show</a>
+                                                    class="bx bx-edit-alt me-1"></i>Voir</a>
 
                                             <form method="POST" action="{{ route('prof.delete', ['id' => $prof->id]) }}"
                                                 style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="dropdown-item"><i
-                                                        class="bx bx-trash me-1"></i>Delete</button>
+                                                        class="bx bx-trash me-1"></i>Supprimer</button>
                                             </form>
 
                                         </div>

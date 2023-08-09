@@ -1,12 +1,12 @@
 @extends('layouts.template')
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms /</span> Basic Inputs</h4>
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Mise à jour</h4>
 
 
         <!-- HTML5 Inputs -->
         <div class="card mb-4">
-            <h5 class="card-header">HTML5 Inputs</h5>
+            <h5 class="card-header fw-bold">Professeur</h5>
             <div class="card-body">
                 <form method="POST" action="{{ route('prof.update', ['id' => $prof->id]) }}">
                     @csrf
@@ -30,7 +30,7 @@
         </div>
 
         <div class="text-start">
-            <button type="submit" class="btn btn-dark">Submit</button>
+            <button type="submit" class="btn btn-dark">Envoyer</button>
         </div>
         </form>
     </div>
