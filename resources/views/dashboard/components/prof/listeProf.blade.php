@@ -61,47 +61,137 @@
         </div>
         <!--/ Basic Bootstrap Table -->
     </div>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-5">
-                <div class="card mb-4">
+            <div class="col-md-12">
+                <div class="card">
+                    
+                        <h2 class="card-header badge bg-info fs-3">Facture</h2>
+                        
+                    <br>
                     <div class="card-body">
-                        <form>
-                            <div class="mb-3">
-                                <label class="form-label" for="input-date">Date:</label>
-                                <input
-                                    type="date"
-                                    class="form-control"
-                                    id="input-date"
-                                    aria-label="Date"
-                                />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="input-start-time">Heure de Début:</label>
-                                <input
-                                    type="time"
-                                    class="form-control"
-                                    id="input-start-time"
-                                    aria-label="Heure de Début"
-                                />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="input-end-time">Heure de Fin:</label>
-                                <input
-                                    type="time"
-                                    class="form-control"
-                                    id="input-end-time"
-                                    aria-label="Heure de Fin"
-                                />
-                            </div>
-                            <!-- Autres champs de saisie ici -->
-                            <button type="submit" class="btn btn-success">Enregistrer</button>
-                        </form>
+                        <div class="mb-4">
+                            <h6>Professeur: Juan Ranaivoson</h6>
+                            <p>Email: juan@gmail.com</p>
+                            <p>Téléphone: 032 98 933 12</p>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr class="bg-primary">
+                                    <th class="text-white fs-7">Date</th>
+                                    <th class="text-white fs-7">Heure de Début</th>
+                                    <th class="text-white fs-7">Heure de Fin</th>
+                                    <th class="text-white fs-7">Module</th>
+                                    <th class="text-white fs-7">Niveau</th>
+                                    <th class="text-white fs-7">Heures</th>
+                                    <th class="text-white fs-7">Montant</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2023-08-01</td>
+                                    <td>08:00 AM</td>
+                                    <td>10:00 AM</td>
+                                    <td>Mathématiques</td>
+                                    <td>L1</td>
+                                    <td>2H</td>
+                                    <td ><span class=" badge bg-success fs-6"> 40 000 Ar</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2023-08-03</td>
+                                    <td>09:00 AM</td>
+                                    <td>11:00 AM</td>
+                                    <td>Science</td>
+                                    <td>L1</td>
+                                    <td>2H</td>
+                                    <td><span class=" badge bg-success fs-6"> 40 000 Ar</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2023-08-05</td>
+                                    <td>10:00 AM</td>
+                                    <td>12:00 PM</td>
+                                    <td>Histoire</td>
+                                    <td>L1</td>
+                                    <td>2H</td>
+                                    <td><span class=" badge bg-success fs-6"> 40 000 Ar</span></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="6" class="text-end"><strong class="fs-4">Total:</strong></td>
+                                    <td><strong class="badge bg-success fs-5">120 000 Ar</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-success  fs-5">Marquer comme Payé</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Suivie de Facture</h4>
+        
+        <!-- Basic Bootstrap Table -->
+        <div class="card p-3">
+            <h5 class="card-header badge bg-info fs-4">Suivie de Facture</h5>
+            <div class="table-responsive text-nowrap">
+                <table id="example" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr class="bg-primary">
+                            <th class="text-white fs-7">Nom</th>
+                            <th class="text-white fs-7">Prenom</th>
+                            <th class="text-white fs-7">Montant Payé</th>
+                            <th class="text-white fs-7">Montant Restant</th>
+                            <th class="text-white fs-7">Status</th>
+                            <th class="text-white fs-7">Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($profs as $prof)
+                            <tr>
+                                <td>{{ $prof->nom }}</td>
+                                <td>{{ $prof->prenom }}</td>
+                                <td> <span class="badge bg-success fs-6">120 000 Ar</span></td>
+                                <td> <span class="badge bg-warning fs-6">0 Ar</span></td>
+                                <td><span class="badge bg-success">Payé</span></td>
+
+                                <td>
+                                    <div class="dropdown">
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                            data-bs-toggle="dropdown">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{{ route('prof.edit', ['id' => $prof->id]) }}"><i
+                                                    class="bx bx-edit-alt me-1"></i> Edit</a>
+
+                                            <a class="dropdown-item" href="{{ route('prof.show', ['id' => $prof->id]) }}"><i
+                                                    class="bx bx-edit-alt me-1"></i>Show</a>
+
+                                            <form method="POST" action="{{ route('prof.delete', ['id' => $prof->id]) }}"
+                                                style="display:inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="dropdown-item"><i
+                                                        class="bx bx-trash me-1"></i>Delete</button>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
     
     
 @endsection
