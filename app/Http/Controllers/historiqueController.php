@@ -30,6 +30,7 @@ class historiqueController extends Controller
      */
     public function store(Request $request)
     {
+        
         Historique::create($request->all());
     }
 
