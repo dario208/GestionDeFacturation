@@ -50,7 +50,7 @@ class moduleController extends Controller
      */
     public function show(string $id)
     {
-        $module = Module::findOrFail($id);
+         $module = Module::findOrFail($id);
 
         return view('dashboard.components.module.historiqueModule');
     }
