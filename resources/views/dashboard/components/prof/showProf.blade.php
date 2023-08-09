@@ -34,7 +34,11 @@
                         <p class="card-text">{{ ($module->classe)->niveau}}</p>
                         <h5 class="card-text"><span>20</span>/<span>{{ $module->heure_globale}}</span></h5>
                         <a href="{{ route('module.historique')}}" class="btn btn-secondary">Historique</a>
-                        <a href="{{ route('heure.saisie')}}" class="btn btn-success">Enregistrer</a>
+
+                        
+                        <a href="{{ route('createHistorique',['id'=> $module->id ])}}" class="btn btn-success">Enregistrer</a>
+
+
                     </div>
                 </div>
             </div>

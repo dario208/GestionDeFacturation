@@ -20,18 +20,10 @@
                         <td>data</td>
                         <td>data</td>
                     </tr>
-                    <tr>
-                        <td>data</td>
-                        <td>data</td>
-                        <td>data</td>
-                        <td>data</td>
-                    </tr>
-                    <tr>
-                        <td>data</td>
-                        <td>data</td>
-                        <td>data</td>
-                        <td>data</td>
-                    </tr>
+                    
+
+
+                    
                     <tr>
 
                         <td colspan="3"class="borderless"></td>
