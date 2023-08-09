@@ -110,6 +110,7 @@ class moduleController extends Controller
         ]);
     }
 
+
     public function showByProf()
     {
         $user_id = Auth::id();
@@ -122,5 +123,6 @@ class moduleController extends Controller
         return view('dashboard.components.prof.mesModules', [
             'modules' => $modules,
         ]);
+
     }
 }

@@ -13,9 +13,11 @@ class historiqueController extends Controller
      */
     public function index(string $id)
     {
+
         $historiques = Historique::where('module_id', $id)->get();
         return view('dashboard.components.module.historiqueModule', [
             'historiques' => $historiques,
+
         ]);
     }
 
