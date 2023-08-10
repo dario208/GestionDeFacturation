@@ -25,10 +25,10 @@ class factureController extends Controller
     public function create( string $id)
 
     {
-        
+        $prof=Prof::find($id);
 
         return view('dashboard.components.facture.facturation',[
-            'prof_id'=>$id,
+            'prof' => $prof ,
         ]);
     }
 
