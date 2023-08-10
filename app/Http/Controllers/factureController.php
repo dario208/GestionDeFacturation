@@ -32,6 +32,7 @@ class factureController extends Controller
 
         return view('dashboard.components.facture.facturation',[
             'prof' => $prof ,
+            'module'=>$module
         ]);
     }
 
