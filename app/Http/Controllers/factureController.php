@@ -22,9 +22,14 @@ class factureController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create( string $id)
+
     {
-        //
+        
+
+        return view('dashboard.components.facture.facturation',[
+            'prof_id'=>$id,
+        ]);
     }
 
     /**
