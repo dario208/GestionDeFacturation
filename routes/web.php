@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\profController;
 use App\Http\Controllers\moduleController;
+use App\Http\Controllers\factureController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\historiqueController;
 
@@ -43,7 +44,6 @@ Route::middleware(['auth', 'user-access:prof'])->group(function () {
 
     Route::controller(dashboardController::class)->group(function () {
         Route::prefix('dashboardProf')->group(function () {
-
             Route::get('/', 'dashboardProf')->name('dashboard.Prof');
             Route::get('profil', 'update')->name('dahboard.Prof.Profil');
         });
@@ -101,7 +101,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::controller(historiqueController::class)->group(function () {
         Route::prefix('historique')->group(function () {
 
-            Route::get('/listes', 'index')->name('historique.listes');
+            Route::get('/listes/{id}', 'index')->name('historique.listes');
         });
     });
 });
@@ -110,12 +110,17 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 Route::middleware(['auth', 'user-access:comptable'])->group(function () {
 
     Route::get('/dashboardComptable', [dashboardController::class, 'dashboardComptable'])->name('dashboard.Comptable');
+
+    Route::controller(factureController::class)->group(function () {
+        Route::prefix('facture')->group(function () {
+
+            Route::get('suivie', 'index')->name('facture.suivie');
+            Route::get('facturation', 'create')->name('facture.facturation');
+            
+        });
+    });
 });
 
-
-// Route::middleware(['auth', 'admin_or_prof'])->group(function () {
-
-// });
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/Pocket/labo.php';

@@ -22,4 +22,4 @@
 <script src="{{ asset('template/vendor/js/helpers.js') }}"></script>
 <script src="{{ asset('template/js/config.js') }}"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ asset('template/vendor/libs/jquery/jquery-3.7.0.min.js') }}"></script>

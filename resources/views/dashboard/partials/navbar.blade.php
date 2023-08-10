@@ -27,37 +27,40 @@
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     @if (auth()->check())
-                        <div> {{ auth()->user()->name }} 
-                            @if(Auth::user()->type == 'admin')
-                                <img src="{{asset('images/secretaire.png')}}" alt="Dashboard Icon" width="50px" height="50px">
+                        <div class="fw-bolder"> {{ auth()->user()->name }}
+                            @if (Auth::user()->type == 'admin')
+                                <img src="{{ asset('images/secretaire.png') }}" alt="Dashboard Icon" width="50px"
+                                    height="50px">
                             @elseif(Auth::user()->type == 'comptable')
-                                <img src="{{asset('images/compta.png')}}" alt="Dashboard Icon" width="50px" height="50px">
+                                <img src="{{ asset('images/compta.png') }}" alt="Dashboard Icon" width="50px"
+                                    height="50px">
                             @elseif(Auth::user()->type == 'prof')
-                                <img src="{{asset('images/prof.png')}}" alt="Dashboard Icon" width="50px" height="50px">
+                                <img src="{{ asset('images/prof.png') }}" alt="Dashboard Icon" width="50px"
+                                    height="50px">
                             @endif
                         </div>
                     @endif
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                   
+
                     @auth
-                    @if(auth()->user()->type == 'prof')
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <i class="bx bx-user me-2"></i>
-                                <span class="align-middle">Mon Profil</span>
-                            </a>
-                        </li>
-                    @endif
-                @endauth
-                 
+                        @if (auth()->user()->type == 'prof')
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bx bx-user me-2"></i>
+                                    <span class="align-middle">Mon Profil</span>
+                                </a>
+                            </li>
+                        @endif
+                    @endauth
+
                     <li>
                         <a class="dropdown-item" href="#">
                             <i class="bx bx-cog me-2"></i>
                             <span class="align-middle">Paramètre</span>
                         </a>
                     </li>
-               
+
                     <li>
                         <div class="dropdown-divider"></div>
                     </li>

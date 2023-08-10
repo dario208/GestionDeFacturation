@@ -10,7 +10,7 @@
             content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
         <title>Document</title>
         <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="{{asset('images/invoice_951764.png') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/invoice_951764.png') }}" />
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,6 +28,9 @@
         <!-- Vendors CSS -->
         <link rel="stylesheet" href="{{ asset('template/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
         <link rel="stylesheet" href="{{ asset('template/vendor/libs/apex-charts/apex-charts.css') }}" />
+        <!-- Page -->
+        <link rel="stylesheet" href="{{ asset('template/vendor/css/pages/page-misc.css') }}" />
+
         <!-- Page auth -->
         <link rel="stylesheet" href="{{ asset('template/vendor/css/pages/page-auth.css') }}" />
     </head>
