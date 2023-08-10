@@ -427,9 +427,9 @@
         width: 130,
         type: 'donut'
       },
-      labels: ['Electronic', 'Sports', 'Decor', 'Fashion'],
-      series: [85, 15, 50, 50],
-      colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
+      labels: ['Reussite', 'Expulsion', 'Redoublant'],
+      series: [80, 5, 15],
+      colors: [config.colors.success, config.colors.secondary, config.colors.info],
       stroke: {
         width: 5,
         colors: cardColor
@@ -475,7 +475,7 @@
                 color: axisColor,
                 label: 'Weekly',
                 formatter: function (w) {
-                  return '38%';
+                  return '95%';
                 }
               }
             }
@@ -591,7 +591,7 @@
   // --------------------------------------------------------------------
   const weeklyExpensesEl = document.querySelector('#expensesOfWeek'),
     weeklyExpensesConfig = {
-      series: [65],
+      series: [25],
       chart: {
         width: 60,
         height: 60,

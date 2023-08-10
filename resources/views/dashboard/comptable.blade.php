@@ -187,13 +187,9 @@
                         </div>
                     </div>
                 </div>
-                <br>
-                <br>
-                <!--/ Total Revenue -->
-                <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
 
 
-                </div>
+                
             </div>
             <div class="row">
                 <!-- Order Statistics -->
@@ -201,8 +197,8 @@
                     <div class="card h-100">
                         <div class="card-header d-flex align-items-center justify-content-between pb-0">
                             <div class="card-title mb-0">
-                                <h5 class="m-0 me-2">Order Statistics</h5>
-                                <small class="text-muted">42.82k Total Sales</small>
+                                <h5 class="m-0 me-2">Statistique d'étudiant</h5>
+                                <small class="text-muted">500 étudiants</small>
                             </div>
                             <div class="dropdown">
                                 <button class="btn p-0" type="button" id="orederStatistics" data-bs-toggle="dropdown"
