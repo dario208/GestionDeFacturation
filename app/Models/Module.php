@@ -9,7 +9,7 @@ class Module extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nom','heure_globale','prof_id','classe_id','tarif_id'];
+    protected $fillable = ['nom','heure_globale','prof_id','classe_id','tarif_id','montant_total'];
 
     // Relation Many-to-One : Un module est attribué à un seul professeur
     public function prof()
