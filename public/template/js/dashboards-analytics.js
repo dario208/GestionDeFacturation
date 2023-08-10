@@ -18,12 +18,12 @@
     totalRevenueChartOptions = {
       series: [
         {
-          name: '2021',
-          data: [18, 7, 15, 29, 18, 12, 9]
+          name: '2023',
+          data: [18, 25, 35, 40, 18, 24, 25]
         },
         {
-          name: '2020',
-          data: [-13, -18, -9, -14, -5, -17, -15]
+          name: '2022',
+          data: [-13, -18, -18, -14, -17, -17, -15]
         }
       ],
       chart: {
@@ -278,8 +278,8 @@
   // --------------------------------------------------------------------
   const growthChartEl = document.querySelector('#growthChart'),
     growthChartOptions = {
-      series: [78],
-      labels: ['Growth'],
+      series: [80],
+      labels: ['Revenue'],
       chart: {
         height: 240,
         type: 'radialBar'
@@ -558,7 +558,7 @@
         }
       },
       xaxis: {
-        categories: ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        categories: ['', 'Jan', 'Feb', 'Mar', 'Avr', 'Mai', 'Juin', 'Jul'],
         axisBorder: {
           show: false
         },
