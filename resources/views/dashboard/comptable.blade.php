@@ -115,15 +115,18 @@
                                             class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                                             <div class="card-title">
                                                 <h5 class="text-nowrap mb-2">Profile Report</h5>
+                                                <br>
                                                 <span class="badge bg-label-warning rounded-pill">Year 2021</span>
                                             </div>
                                             <div class="mt-sm-auto">
                                                 <small class="text-success text-nowrap fw-semibold"><i
                                                         class="bx bx-chevron-up"></i>
                                                     68.2%</small>
+                                                <br>    
                                                 <h3 class="mb-0">$84,686k</h3>
                                             </div>
                                         </div>
+                                        <br>
                                         <div id="profileReportChart"></div>
                                     </div>
                                 </div>
