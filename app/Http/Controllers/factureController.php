@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prof;
+use App\Models\Module;
 use Illuminate\Http\Request;
 
 class factureController extends Controller
@@ -13,6 +14,7 @@ class factureController extends Controller
     public function index()
     {
         $profs = Prof::all();
+
 
         return view('dashboard.components.facture.suivie',[
             'profs'=>$profs
@@ -25,10 +27,11 @@ class factureController extends Controller
     public function create( string $id)
 
     {
-        
+        $prof=Prof::find($id);
+        $module =Module::where('pro_id',$id)->get();
 
         return view('dashboard.components.facture.facturation',[
-            'prof_id'=>$id,
+            'prof' => $prof ,
         ]);
     }
 
