@@ -19,11 +19,11 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Total Classes</h6>
+                                    <h6>Total de Classes</h6>
                                     <h3>04/06</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ URL::to('assets/img/icons/teacher-icon-01.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/icon/teacher-icon-01.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
@@ -34,11 +34,11 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Total Students</h6>
+                                    <h6>Total d'étudiant</h6>
                                     <h3>40/60</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ URL::to('assets/img/icons/dash-icon-01.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/icon/dash-icon-01.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
@@ -49,11 +49,11 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Total Lessons</h6>
-                                    <h3>30/50</h3>
+                                    <h6>Total de module</h6>
+                                    <h3>03/15</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ URL::to('assets/img/icons/teacher-icon-02.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/icon/teacher-icon-02.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                                     <h3>15/20</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ URL::to('assets/img/icons/teacher-icon-03.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/icon/teacher-icon-03.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
