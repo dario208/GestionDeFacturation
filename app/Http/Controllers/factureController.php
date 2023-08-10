@@ -12,7 +12,11 @@ class factureController extends Controller
      */
     public function index()
     {
-        
+        $profs = Prof::all();
+
+        return view('dashboard.components.facture.suivie',[
+            'profs'=>$profs
+        ]);
     }
 
     /**
