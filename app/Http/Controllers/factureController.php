@@ -12,7 +12,7 @@ class factureController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**

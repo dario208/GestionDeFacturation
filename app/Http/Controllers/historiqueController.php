@@ -64,7 +64,18 @@ class historiqueController extends Controller
 
          // Enregistrement de l'historique pour déclencher l'observateur
             $historique->save();
+
+         // Mettre à jour le solde_totale du professeur associé
+         $module = Module::find($request->module_id);
+         $prof = $module->prof;
+         $modules = $prof->modules;
+         $solde_actuelle = $modules->sum('montant_total');
+
         
+
+     $prof->update(['solde_actuelle' => $solde_actuelle]);
+        
+
 
         return redirect()->route('historique.liste',["id"=>($request->module_id)]);
     }
