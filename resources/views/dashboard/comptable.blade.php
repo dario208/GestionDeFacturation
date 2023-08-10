@@ -95,7 +95,7 @@
                             </div>
                             <div class="col-sm-5 text-center text-sm-left">
                                 <div class="card-body pb-0 px-0 px-md-4">
-                                    <img src="{{ asset('images/invoice_951764.png') }}" height="160" alt="View Badge User"
+                                    <img src="{{ asset('images/compdash.png') }}" height="160" alt="View Badge User"
                                         data-app-dark-img="illustrations/man-with-laptop-dark.png"
                                         data-app-light-img="illustrations/man-with-laptop-light.png">
                                         
@@ -115,15 +115,18 @@
                                             class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                                             <div class="card-title">
                                                 <h5 class="text-nowrap mb-2">Profile Report</h5>
+                                                <br>
                                                 <span class="badge bg-label-warning rounded-pill">Year 2021</span>
                                             </div>
                                             <div class="mt-sm-auto">
                                                 <small class="text-success text-nowrap fw-semibold"><i
                                                         class="bx bx-chevron-up"></i>
                                                     68.2%</small>
+                                                <br>    
                                                 <h3 class="mb-0">$84,686k</h3>
                                             </div>
                                         </div>
+                                        <br>
                                         <div id="profileReportChart"></div>
                                     </div>
                                 </div>
