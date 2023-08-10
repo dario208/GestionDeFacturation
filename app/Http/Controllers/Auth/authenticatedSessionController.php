@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
+
 class authenticatedSessionController extends Controller
 {
     public function create(): View
