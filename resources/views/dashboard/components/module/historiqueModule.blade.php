@@ -28,9 +28,12 @@
 
                         <td colspan="3"class="borderless"></td>
                         <td><span>{{$heure_effectue}} heures </span> sur <span>{{$heure_globale}}</span></td>
+                        
                     </tr>
                 </tbody>
             </table>
+                        Soit: {{$montant_total}} Ariary
+            
         </div>
 
     </div>
