@@ -93,12 +93,12 @@
                 <ul class="menu-sub">
                     <li class="menu-item {{ active(['prof/liste']) }}">
                         <a href="{{ route('prof.liste') }}" class="menu-link">
-                            <div data-i18n="Account">Prof Liste</div>
+                            <div data-i18n="Account">Liste</div>
                         </a>
                     </li>
                     <li class="menu-item {{ active(['prof/add']) }}">
                         <a href="{{ route('prof.add') }}" class="menu-link">
-                            <div data-i18n="Notifications">Prof Add</div>
+                            <div data-i18n="Notifications">Ajout</div>
                         </a>
                     </li>
                 </ul>
@@ -136,11 +136,11 @@
                             <div data-i18n="Perfect Scrollbar">Suivie</div>
                         </a>
                     </li>
-                    <li class="menu-item {{ active(['facture/facturation']) }}">
+                    {{-- <li class="menu-item {{ active(['facture/facturation']) }}">
                         <a href="{{ route('facture.facturation') }}" class="menu-link">
                             <div data-i18n="Text Divider">Facturation</div>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </li>
         @else

@@ -1,5 +1,14 @@
 @extends('layouts.template')
 @section('content')
+    @if (Session::has('success'))
+        <script>
+            toastr.options = {
+                "progressBar": true,
+            };
+            toastr.success("{{ session::get('success') }}");
+        </script>
+    @endif
+@endsection
     <div class="content-wrapper">
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">

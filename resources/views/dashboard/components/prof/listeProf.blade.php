@@ -1,9 +1,9 @@
 @extends('layouts.template')
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Liste des professeurs</h4>
+        <h4 class="fw-bold py-2 mb-3"><span class="text-muted fw-light"></span> Liste des professeurs</h4>
         <div class=" text-end mb-4">
-            <a class="btn btn-primary" href="{{ route('prof.add') }}">ajouter</a>
+            <a class="btn btn-primary" href="{{ route('prof.add') }}">Ajouter</a>
         </div>
         <!-- Basic Bootstrap Table -->
         <div class="card p-3">
@@ -16,6 +16,7 @@
                             <th>Prenom</th>
                             <th>E-mail</th>
                             <th>Numero</th>
+                            <th>Voir</th>
                             <th>Action</th>
 
                         </tr>
@@ -28,6 +29,10 @@
                                 <td>{{ $prof->user->email }}</td>
                                 <td>{{ $prof->telephone }}</td>
                                 <td>
+                                    <a class="text-secondary" href="{{ route('prof.show', ['id' => $prof->id]) }}"><i
+                                            class="bx bx-info-circle"></i></a>
+                                </td>
+                                <td>
                                     <div class="dropdown">
                                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
                                             data-bs-toggle="dropdown">
@@ -36,9 +41,6 @@
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="{{ route('prof.edit', ['id' => $prof->id]) }}"><i
                                                     class="bx bx-edit-alt me-1"></i> Editer</a>
-
-                                            <a class="dropdown-item" href="{{ route('prof.show', ['id' => $prof->id]) }}"><i
-                                                    class="bx bx-edit-alt me-1"></i>Voir</a>
 
                                             <form method="POST" action="{{ route('prof.delete', ['id' => $prof->id]) }}"
                                                 style="display:inline;">
@@ -63,4 +65,3 @@
         <!--/ Basic Bootstrap Table -->
     </div>
 @endsection
-

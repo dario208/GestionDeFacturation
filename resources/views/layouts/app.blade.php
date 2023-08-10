@@ -33,6 +33,10 @@
 
         <!-- Page auth -->
         <link rel="stylesheet" href="{{ asset('template/vendor/css/pages/page-auth.css') }}" />
+        {{-- message toastr --}}
+        <link rel="stylesheet" href="{{ asset('template/css/toastr.min.css') }}">
+        <script src="{{ asset('template/js/toastr_jquery.min.js') }}"></script>
+        <script src="{{ asset('template/js/toastr.min.js') }}"></script>
     </head>
 
 <body>

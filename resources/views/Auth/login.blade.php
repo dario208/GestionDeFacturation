@@ -1,6 +1,13 @@
 @extends('layouts.app')
 @section('content')
-
+@if (Session::has('error'))
+<script>
+    toastr.options = {
+      "progressBar" : true,  
+    };
+    toastr.error("{{ session::get('error') }}");
+</script>
+@endif
 <div class="container-xxl">
     <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner">
@@ -47,12 +54,6 @@
                             <span class="app-brand-text demo text-body fw-bolder">Logo_name</span>
                         </a>
                     </div>
-
-                    @if (Session::has('error'))
-                    <div class=" alert alert-danger" role="alert">
-                        {{ Session::get('error')}}
-                    </div>
-                    @endif
                     <!-- /Logo -->
                     <h4 class="mb-2">Bienvenue !👋</h4>
 
