@@ -14,28 +14,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>data</td>
-                        <td>data</td>
-                        <td>data</td>
-                        <td>data</td>
-                    </tr>
-                    <tr>
-                        <td>data</td>
-                        <td>data</td>
-                        <td>data</td>
-                        <td>data</td>
-                    </tr>
-                    <tr>
-                        <td>data</td>
-                        <td>data</td>
-                        <td>data</td>
-                        <td>data</td>
-                    </tr>
+                    @foreach ($historiques as $historique)
+                        <tr>
+                            <td>{{$historique->date}}</td>
+                            <td>{{$historique->heure_de_debut}}</td>
+                            <td>{{$historique->heure_de_fin}}</td>
+                            <td>{{$historique->total_heure}}</td>
+                        </tr>
+ 
+                    @endforeach
+                    
                     <tr>
 
                         <td colspan="3"class="borderless"></td>
-                        <td><span>data</span>/<span>data</span></td>
+                        <td><span>{{$heure_effectue}} heures </span> sur <span>{{$heure_globale}}</span></td>
                     </tr>
                 </tbody>
             </table>

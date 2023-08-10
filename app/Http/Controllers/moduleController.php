@@ -8,6 +8,9 @@ use App\Models\Classe;
 use App\Models\Module;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
+
 class moduleController extends Controller
 {
 
@@ -48,11 +51,11 @@ class moduleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        $module = Module::findOrFail($id);
+        //   $module = Module::findOrFail($id);
 
-        return view('dashboard.components.module.historiqueModule');
+        // return view('dashboard.components.prof.mesModules');
     }
 
     /**
@@ -107,5 +110,20 @@ class moduleController extends Controller
             'tarif' => $cout_horaire,
             'tarif_id' => $tarif_id, // Inclure l'ID du coût horaire
         ]);
+    }
+
+    public function showByProf()
+    {
+        $user_id = Auth::id();
+        $prof = Prof::where('user_id', $user_id)->first();
+
+        $prof_id = $prof->id;
+
+        $modules = Module::where('prof_id', $prof_id)->get();
+
+        return view('dashboard.components.prof.mesModules', [
+            'modules' => $modules,
+        ]);
+
     }
 }

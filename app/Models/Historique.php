@@ -2,12 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Historique extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
+
 
     protected $fillable =['date','heure_de_debut','heure_de_fin','total_heure','module_id'];
 
