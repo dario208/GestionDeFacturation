@@ -27,6 +27,12 @@ class profController extends Controller
     {
         $prof = Prof::findOrFail($id);
 
+         // Calculer la somme des heures effectuées pour chaque module
+    foreach ($prof->modules as $module) {
+        $heureEffectueeModule = $module->historiques->sum('total_heure');
+        $module->heureEffectuee = $heureEffectueeModule;
+    }
+
          return view('dashboard.components.prof.showProf',[
             'prof'=> $prof,
          ]);

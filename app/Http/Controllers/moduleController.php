@@ -117,13 +117,19 @@ class moduleController extends Controller
         $user_id = Auth::id();
         $prof = Prof::where('user_id', $user_id)->first();
 
-        $prof_id = $prof->id;
+        $modules = $prof->modules; // Utilisez la relation pour obtenir les modules du professeur
 
-        $modules = Module::where('prof_id', $prof_id)->get();
+    // Calculons la somme totale des heures effectuées pour tous les modules du professeur
+    $sommeHeuresEffectuees = 0;
+    foreach ($modules as $module) {
+        $heureEffectueeModule = $module->historiques->sum('total_heure');
+        $sommeHeuresEffectuees += $heureEffectueeModule;
+    }
 
-        return view('dashboard.components.prof.mesModules', [
-            'modules' => $modules,
-        ]);
+    return view('dashboard.components.prof.mesModules', [
+        'modules' => $modules,
+        'sommeHeuresEffectuees' => $sommeHeuresEffectuees, // J Passe la somme à la vue
+    ]);
 
     }
 }
