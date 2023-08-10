@@ -15,6 +15,7 @@
                             <th>Tolal-H</th>
                         </tr>
 
+
                     </thead>
                     <tbody>
                         @foreach ($historiques as $historique)
@@ -25,11 +26,7 @@
                                 <td>{{ $historique->total_heure }}</td>
                             </tr>
 
-                            {{-- <tr>
-    
-                                <td colspan="3"class="borderless"></td>
-                                <td><span>data</span>/<span>data</span></td>
-                            </tr> --}}
+                           
                         @endforeach
                     </tbody>
                 </table>
@@ -37,6 +34,7 @@
 
  
                    
+
 
         </div>
 
