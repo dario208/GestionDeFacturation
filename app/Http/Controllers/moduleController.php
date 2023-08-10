@@ -120,8 +120,8 @@ class moduleController extends Controller
         $modules = $prof->modules; // Utilisez la relation pour obtenir les modules du professeur
 
     // Calculons la somme totale des heures effectuées pour tous les modules du professeur
-    $sommeHeuresEffectuees = 0;
-    foreach ($modules as $module) {
+        $sommeHeuresEffectuees = 0;
+        foreach ($modules as $module) {
         $heureEffectueeModule = $module->historiques->sum('total_heure');
         $sommeHeuresEffectuees += $heureEffectueeModule;
     }
