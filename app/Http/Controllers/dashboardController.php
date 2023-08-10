@@ -10,7 +10,11 @@ class dashboardController extends Controller
 {
     public function dashboardProf(): View
     {
-        return view('dashboard.prof');
+        $user_id = Auth::id();
+        $prof = Prof::where('user_id',$user_id)->first();
+        return view('dashboard.prof',[
+            'prof' => $prof ,
+        ]);
     }
 
     public function dashboardAdmin(): View
