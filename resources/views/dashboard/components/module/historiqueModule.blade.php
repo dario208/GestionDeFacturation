@@ -15,6 +15,7 @@
                             <th>Tolal-H</th>
                         </tr>
 
+
                     </thead>
                     <tbody>
                         @foreach ($historiques as $historique)
@@ -34,6 +35,7 @@
 
                 soit: {{$montant_total}} Ariary
             </div>
+
 
 
         </div>
