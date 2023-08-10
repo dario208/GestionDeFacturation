@@ -15,6 +15,7 @@
                             <th>Tolal-H</th>
                         </tr>
 
+
                     </thead>
                     <tbody>
                         @foreach ($historiques as $historique)
@@ -24,19 +25,18 @@
                                 <td>{{ $historique->heure_de_fin }}</td>
                                 <td>{{ $historique->total_heure }}</td>
                             </tr>
-
-                            {{-- <tr>
-    
-                                <td colspan="3"class="borderless"></td>
-                                <td><span>data</span>/<span>data</span></td>
-                            </tr> --}}
                         @endforeach
+                        <tr>
+                            <td colspan="3"class="borderless"></td>
+                            <td>Tolal: <span>{{$heure_effectue}} </span>heures sur <span>{{$heure_globale}}</span></td>
+                        </tr>
                     </tbody>
                 </table>
+
+                soit: {{$montant_total}} Ariary
             </div>
 
- 
-                   
+
 
         </div>
 

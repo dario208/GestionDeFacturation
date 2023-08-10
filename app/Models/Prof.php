@@ -9,7 +9,7 @@ class Prof extends Model
 {
     use HasFactory;
 
-    protected $fillable =['nom','prenom','telephone','user_id'];
+    protected $fillable =['nom','prenom','telephone','user_id','solde_actuelle'];
 
     public function user(){
         return $this->belongsTo(User::class);
@@ -29,6 +29,10 @@ class Prof extends Model
      {
          return $this->hasMany(Facture::class);
      }
+
+
+
+     
 
 
 }
