@@ -1,5 +1,16 @@
 @extends('layouts.template')
 @section('content')
+    @if (Session::has('success'))
+        <script>
+            toastr.options = {
+                "progressBar": true,
+                "showEasing": "swing", // Animation d'affichage
+                "hideEasing": "linear", // Animation de disparitio
+            };
+            toastr.success("{{ session::get('success') }}");
+        </script>
+    @endif
+
     <div class="content-wrapper">
         <!-- Content -->
 
@@ -47,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="col-xl-3 col-sm-6 col-12 d-flex">
                         <div class="card bg-comman w-100">
                             <div class="card-body">
@@ -191,7 +202,7 @@
                     </div>
                 </div>
                 <!-- </div>
-    <div class="row"> -->
+            <div class="row"> -->
 
             </div>
         </div>

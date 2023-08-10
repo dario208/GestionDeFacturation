@@ -34,14 +34,14 @@ class authenticatedSessionController extends Controller
         if (Auth::attempt($credentials)) {
             // L'authentification est réussie, rediriger vers la page d'accueil
             if (auth()->user()->type == 'admin') {
-                return redirect()->route('dashboard.Admin');
+                return redirect()->route('dashboard.Admin')->with('success', 'Connexion réussie administrateur');
             } else if (auth()->user()->type == 'comptable') {
-                return redirect()->route('dashboard.Comptable');
+                return redirect()->route('dashboard.Comptable')->with('success', 'Connexion réussie comptable');
             } else {
-                return redirect('/dashboardProf');
+                return redirect('/dashboardProf')->with('success', 'Connexion réussie professseur');
             }
         } else {
-            return redirect()->route('login')->with('error', 'Email-Adrress and  Password are  wrong');
+            return redirect()->route('login')->with('error', 'E-mail ou Mot de passe incorrect');
         }
         // Plus de sécurité : chaque fois qu'un utilisateur se connecte, une nouvelle session avec un nouvel ID de session est créée.
         $request->session()->regenerate();
