@@ -28,7 +28,7 @@ class factureController extends Controller
 
     {
         $prof=Prof::find($id);
-        $module =Module::where('pro_id',$id)->get();
+        $module =Module::where('prof_id',$id)->get();
 
         return view('dashboard.components.facture.facturation',[
             'prof' => $prof ,
