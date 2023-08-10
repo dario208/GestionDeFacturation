@@ -30,6 +30,59 @@
                     </div>
                 </div>
                 <br>
+                <div class="row">
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                        <div class="card bg-comman w-100">
+                            <div class="card-body">
+                                <div class="db-widgets d-flex justify-content-between align-items-center">
+                                    <div class="db-info">
+                                        <h6>Students</h6>
+                                        <h3>500</h3>
+                                    </div>
+                                    <div class="db-icon">
+                                        <img src="{{ asset('images/students.png') }}" alt="Dashboard Icon" width="100px"
+                                            height="100px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                        <div class="card bg-comman w-100">
+                            <div class="card-body">
+                                <div class="db-widgets d-flex justify-content-between align-items-center">
+                                    <div class="db-info">
+                                        <h6>Department</h6>
+                                        <h3>30+</h3>
+                                    </div>
+                                    <div class="db-icon">
+                                        <img src="{{ asset('images/departement.png') }}" alt="Dashboard Icon" width="100px"
+                                            height="100px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                        <div class="card bg-comman w-100">
+                            <div class="card-body">
+                                <div class="db-widgets d-flex justify-content-between align-items-center">
+                                    <div class="db-info">
+                                        <h6>Revenue</h6>
+                                        <h3>25 000 000 Ar</h3>
+                                    </div>
+                                    <div class="db-icon">
+                                        <img src="{{ asset('images/revenue.png') }}" alt="Dashboard Icon" width="100px"
+                                            height="100px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
                 <div class="col-lg-4 col-md-4 order-1">
                     <div class="row">
                         <div class="col-lg-8 col-md-12 col-6 mb-4">
@@ -87,7 +140,7 @@
                 </div>
 
                 <!--/ Total Revenue -->
-                <div class="col-lg-8 col-md-12 col-6 mb-4">
+                <div class="col-lg-4 col-md-4 order-1">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
@@ -106,8 +159,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <span>Heure effectue</span>
-                            <h3 class="card-title text-nowrap mb-1">25H</h3>
+                            <span>Heure restant</span>
+                            <h3 class="card-title text-nowrap mb-1">5H</h3>
                             <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> 80%</small>
                         </div>
                     </div>

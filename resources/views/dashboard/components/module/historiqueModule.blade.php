@@ -14,6 +14,7 @@
                             <th>H-Fin</th>
                             <th>Tolal-H</th>
                         </tr>
+
                     </thead>
                     <tbody>
                         @foreach ($historiques as $historique)
@@ -33,6 +34,18 @@
                     </tbody>
                 </table>
             </div>
+
+ 
+                    @endforeach
+                    
+                    <tr>
+
+                        <td colspan="3"class="borderless"></td>
+                        <td><span>{{$heure_effectue}} heures </span> sur <span>{{$heure_globale}}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
         </div>
 
     </div>

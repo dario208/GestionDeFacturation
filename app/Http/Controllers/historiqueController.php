@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Module;
 use App\Models\Historique;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,9 +15,16 @@ class historiqueController extends Controller
     public function index(string $id)
     {
         $historiques = Historique::where('module_id', $id)->get();
+        $heure_effectue=$historiques->sum('total_heure');
+
+        $heure_globale=(Module::find($id))->heure_globale;
+
         return view('dashboard.components.module.historiqueModule', [
             'historiques' => $historiques,
+            'heure_effectue' => $heure_effectue,
+            'heure_globale'=>$heure_globale
         ]);
+      
     }
 
     /**
