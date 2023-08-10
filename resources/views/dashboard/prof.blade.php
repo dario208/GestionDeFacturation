@@ -96,10 +96,11 @@
                             </div>
                             <div class="col-sm-5 text-center text-sm-left">
                                 <div class="card-body pb-0 px-0 px-md-4">
-                                    <img src="{{ asset('images/teachers.png') }}" height="140" alt="View Badge User"
+                                    <img src="{{ asset('images/teachers.png') }}" height="160" alt="View Badge User"
                                         data-app-dark-img="illustrations/man-with-laptop-dark.png"
                                         data-app-light-img="illustrations/man-with-laptop-light.png">
                                 </div>
+                                <br>
                             </div>
                         </div>
                     </div>
@@ -113,17 +114,23 @@
                                         <div
                                             class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                                             <div class="card-title">
-                                                <h5 class="text-nowrap mb-2">Profile Report</h5>
-                                                <span class="badge bg-label-warning rounded-pill">Year 2021</span>
+                                                <h5 class="text-nowrap mb-2">Soldes</h5>
+                                                <span class="badge bg-label-warning rounded-pill">Année 2023</span>
                                             </div>
                                             <div class="mt-sm-auto">
                                                 <small class="text-success text-nowrap fw-semibold"><i
                                                         class="bx bx-chevron-up"></i>
-                                                    68.2%</small>
-                                                <h3 class="mb-0">$84,686k</h3>
+                                                    50%</small>
+                                                    <br>
+                                                <h3 class="mb-0">170 000 MGA</h3>
                                             </div>
                                         </div>
-                                        <div id="profileReportChart"></div>
+                                        <div class="card-body pb-0 px-0 px-md-4">
+                                            <img src="{{ asset('images/sold.png') }}" height="130" alt="View Badge User"
+                                                data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                                                data-app-light-img="illustrations/man-with-laptop-light.png">
+                                        </div>
+                                        <br>
                                     </div>
                                 </div>
                             </div>
