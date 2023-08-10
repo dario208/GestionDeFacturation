@@ -62,16 +62,9 @@ class historiqueController extends Controller
             'module_id' => $request->module_id,
         ]);
 
-        //  // Mettre à jour la solde du professeur associé au module
-        //   $module = $historique->module;
-        //   $prof = $module->prof;
-
-        //   $sommeHeures = $module->historiques->sum('total_heure');
-        //   $cout_horaire = $module->tarif->cout_horaire;
-        //   $soldeModule = $sommeHeures * $cout_horaire;
-
-        //   $prof->solde_actuelle += $soldeModule;
-        //   $prof->save();
+         // Enregistrement de l'historique pour déclencher l'observateur
+            $historique->save();
+        
 
         return redirect()->route('historique.liste',["id"=>($request->module_id)]);
     }
