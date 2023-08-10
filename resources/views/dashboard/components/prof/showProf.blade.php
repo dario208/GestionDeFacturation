@@ -32,7 +32,8 @@
                             <h4 class="card-title fw-bold">{{ $module->nom }}</h4>
                             <p class="card-text">{{ $module->classe->niveau }}</p>
                             <h5 class="card-text"><span>20</span>/<span>{{ $module->heure_globale }}</span></h5>
-                            <a href="" class="btn btn-secondary">Historique</a>
+                            <a href="{{ route('historique.listes', ['id' => $module->id]) }}"
+                                class="btn btn-secondary">Historique</a>
                         </div>
 
                     </div>
