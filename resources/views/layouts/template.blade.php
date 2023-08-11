@@ -48,16 +48,12 @@
         <!-- Overlay -->
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-   
+
     @include('dashboard.partials.footerScript')
 
     <script>
         new DataTable('#example');
 
-        $('.printPage').click(function() {
-            window.print();
-            return false;
-        });
     </script>
 </body>
 

@@ -4,12 +4,11 @@
         <script>
             toastr.options = {
                 "progressBar": true,
-                "showEasing": "swing", // Animation d'affichage
-                "hideEasing": "linear", // Animation de disparitio
             };
             toastr.success("{{ session::get('success') }}");
         </script>
     @endif
+
     <div class="content-wrapper">
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
@@ -19,8 +18,8 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Total de Classes</h6>
-                                    <h3>04/06</h3>
+                                    <h6>Mes Classes</h6>
+                                    <h3>{{$totalClasses}}</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/icon/teacher-icon-01.svg') }}" alt="Dashboard Icon">
@@ -34,8 +33,8 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Total d'étudiant</h6>
-                                    <h3>40/60</h3>
+                                    <h6>Mes Modules</h6>
+                                    <h3>{{$total_modules}}</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/icon/dash-icon-01.svg') }}" alt="Dashboard Icon">
@@ -49,8 +48,8 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Total de module</h6>
-                                    <h3>03/15</h3>
+                                    <h6>Heure effectués</h6>
+                                    <h3>{{$totalHeures}}H</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/icon/teacher-icon-02.svg') }}" alt="Dashboard Icon">
@@ -64,7 +63,7 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Total Hours</h6>
+                                    <h6>Facture reçue</h6>
                                     <h3>15/20</h3>
                                 </div>
                                 <div class="db-icon">
@@ -84,22 +83,20 @@
                         <div class="d-flex align-items-end row">
                             <div class="col-sm-7">
                                 <div class="card-body">
-                                    <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                                    <h5 class="card-title text-primary"><span class="badge bg-success fs-5">Bienvenue {{ $prof->nom }}!</h5>
                                     <p class="mb-4">
-                                        You have done <span class="fw-bold">72%</span> more sales today. Check your new
-                                        badge in
-                                        your profile.
+                                        Nous vous souhaitons la bienvenue dans votre espace de travail ! 🌟.
                                     </p>
 
-                                    <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+                                    <a href="javascript:;" class="btn btn-sm btn-outline-primary">Voir onglets</a>
                                 </div>
                             </div>
                             <div class="col-sm-5 text-center text-sm-left">
                                 <div class="card-body pb-0 px-0 px-md-4">
-                                    <img src="{{ asset('images/compdash.png') }}" height="160" alt="View Badge User"
+                                    <img src="{{ asset('images/teachers.png') }}" height="160" alt="View Badge User"
                                         data-app-dark-img="illustrations/man-with-laptop-dark.png"
                                         data-app-light-img="illustrations/man-with-laptop-light.png">
-
+                                        
                                 </div>
                                 <br>
                             </div>
@@ -119,15 +116,13 @@
                                                 <span class="badge bg-label-warning rounded-pill">Année 2023</span>
                                             </div>
                                             <div class="mt-sm-auto">
-                                                <small class="text-success text-nowrap fw-semibold"><i
-                                                        class="bx bx-chevron-up"></i>
-                                                    50%</small>
+                                                <small class="text-success text-nowrap fw-semibold fs-6">MGA</small>
                                                     <br>
                                                 <h3 class="mb-0">{{$prof->solde_actuelle}}</h3>
                                             </div>
                                         </div>
                                         <div class="card-body pb-0 px-0 px-md-4">
-                                            <img src="{{ asset('images/sold.png') }}" height="130" alt="View Badge User"
+                                            <img src="{{ asset('images/sold.png') }}" height="130 px" width="130px" alt="View Badge User"
                                                 data-app-dark-img="illustrations/man-with-laptop-dark.png"
                                                 data-app-light-img="illustrations/man-with-laptop-light.png">
                                         </div>
@@ -138,13 +133,12 @@
                         </div>
                     </div>
                 </div>
-                </div>
                 <!-- Total Revenue -->
                 <div class="col-12 col-lg-12 order-2 order-md-3 order-lg-2 mb-4">
                     <div class="card">
                         <div class="row row-bordered g-0">
                             <div class="col-md-8">
-                                <h5 class="card-header m-0 me-2 pb-3">Total de Rémuneration</h5>
+                                <h5 class="card-header m-0 me-2 pb-3">Statistique de facturation</h5>
                                 <div id="totalRevenueChart" class="px-2"></div>
                             </div>
                             <div class="col-md-4">
@@ -167,7 +161,7 @@
                                     </div>
                                 </div>
                                 <div id="growthChart"></div>
-                                <div class="text-center fw-semibold pt-3 mb-2">62% Company Growth</div>
+                                
 
                                 <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
                                     <div class="d-flex">
@@ -195,9 +189,13 @@
                         </div>
                     </div>
                 </div>
+                <br>
+                <br>
+                <!--/ Total Revenue -->
+                <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
 
 
-
+                </div>
             </div>
             <div class="row">
                 <!-- Order Statistics -->
@@ -206,14 +204,14 @@
                         <div class="card-header d-flex align-items-center justify-content-between pb-0">
                             <div class="card-title mb-0">
                                 <h5 class="m-0 me-2">Statistique d'étudiant</h5>
-
+                                
                             </div>
-
+                            
                         </div>
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <div class="d-flex flex-column align-items-center gap-1">
-                                    <h2 class="mb-2">500 </h2>
+                                    <h2 class="mb-2">500</h2>
                                     <span>étudiants</span>
                                 </div>
                                 <div id="orderStatisticsChart"></div>
@@ -301,9 +299,9 @@
                         <div class="card-body px-0">
                             <div class="tab-content p-0">
                                 <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
-
+                                    
                                     <div id="incomeChart"></div>
-
+                                    
                                 </div>
                             </div>
                         </div>
@@ -368,5 +366,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    @endsection
+    </div>
+@endsection

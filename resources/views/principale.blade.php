@@ -4,16 +4,25 @@
         <!-- Header Start -->
         <header>
             <nav class="nav container">
-                <h2 class="nav_logo"><a href="#">nom_Logo</a></h2>
+                <div class="app-brand demo">
+                    <a href="#" class="app-brand-link">
+                        <span class="app-brand-logo demo">
+                            <img src="{{ asset('images/Capture_d_écran__6_-removebg-preview.png') }}"
+                                alt=""style="width: 40px; height: 40px; margin-bottom:-9px">
+                        </span>
+                        <span class="app-brand-text demo menu-text fw-bold ms-1 text-uppercase text-lead"
+                            style="font-size: 23px; font-weight: 600">DENARIAN</span>
+                    </a>
+                </div>
 
                 <ul class="menu_items">
-                    <img src="{{asset('images/times.svg')}}" alt="timesicon" id="menu_toggle" />
+                    <img src="{{ asset('images/times.svg') }}" alt="timesicon" id="menu_toggle" />
                     <li><a href="#" class="nav_link">Accueil</a></li>
                     <li><a href="#" class="nav_link">A propos </a></li>
                     <li><a href="#" class="nav_link">Service</a></li>
                     <li><a href="#" class="nav_link">Contact</a></li>
                 </ul>
-                <img src="{{asset('images/bars.svg')}}" alt="timesicon" id="menu_toggle" />
+                <img src="{{ asset('images/bars.svg') }}" alt="timesicon" id="menu_toggle" />
             </nav>
         </header>
         <!-- Header End -->
@@ -45,10 +54,10 @@
 
                 </div>
                 <div class="column">
-                    <img src="{{asset('images/login.png')}}" alt="heroImg" class="hero_img" />
+                    <img src="{{ asset('images/login.png') }}" alt="heroImg" class="hero_img" />
                 </div>
             </div>
-            <img src="{{asset('images/bg-bottom-hero.png')}}" alt="" class="curveImg" />
+            <img src="{{ asset('images/bg-bottom-hero.png') }}" alt="" class="curveImg" />
         </section>
         <!-- Hero End-->
     </main>
