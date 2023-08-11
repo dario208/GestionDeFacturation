@@ -115,7 +115,7 @@
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item {{ active(['module/voir']) }}">
-                        <a href="" class="menu-link">
+                        <a href="{{ route('module.showByProf') }}" class="menu-link">
                             <div data-i18n="Basic Inputs">liste</div>
                         </a>
                     </li>
