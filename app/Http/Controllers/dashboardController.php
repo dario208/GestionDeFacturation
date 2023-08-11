@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prof;
+use App\Models\Module;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,25 @@ class dashboardController extends Controller
 
     public function dashboardAdmin(): View
     {
-        return view('dashboard.admin');
+        $totalHeures = 0;
+
+        $modules = Module::all();
+
+        $total_modules = Module::count();
+
+        $total_profs = Prof::count();
+
+
+        foreach ($modules as $module) {
+            foreach ($module->historiques as $historique) {
+                $totalHeures += $historique->total_heure;
+            }
+        }
+        return view('dashboard.admin',[
+            'total_modules'=>$total_modules,
+            'total_profs'=>$total_profs,
+            'totalHeures' => $totalHeures,
+        ]);
     }
 
     public function dashboardComptable(): View
