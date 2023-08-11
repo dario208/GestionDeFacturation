@@ -19,8 +19,8 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Total de Classes</h6>
-                                    <h3>04/06</h3>
+                                    <h6>Mes Classes</h6>
+                                    <h3>{{$totalClasses}}</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/icon/teacher-icon-01.svg') }}" alt="Dashboard Icon">
@@ -34,8 +34,8 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Total d'étudiant</h6>
-                                    <h3>40/60</h3>
+                                    <h6>Mes Modules</h6>
+                                    <h3>{{$total_modules}}</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/icon/dash-icon-01.svg') }}" alt="Dashboard Icon">
@@ -49,8 +49,8 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Total de module</h6>
-                                    <h3>03/15</h3>
+                                    <h6>Heure effectués</h6>
+                                    <h3>{{$totalHeures}}H</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/icon/teacher-icon-02.svg') }}" alt="Dashboard Icon">
@@ -64,7 +64,7 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Total Hours</h6>
+                                    <h6>Facture reçue</h6>
                                     <h3>15/20</h3>
                                 </div>
                                 <div class="db-icon">
