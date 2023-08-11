@@ -17,8 +17,8 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Students</h6>
-                                    <h3>50055</h3>
+                                    <h6>Nos professeurs</h6>
+                                    <h3>{{$total_profs}}</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/icon/dash-icon-01.svg') }}" alt="Dashboard Icon">
@@ -32,8 +32,8 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Awards</h6>
-                                    <h3>50+</h3>
+                                    <h6>Nos Modules</h6>
+                                    <h3>{{$total_modules}}</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/icon/dash-icon-02.svg') }}" alt="Dashboard Icon">
@@ -47,8 +47,8 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Department</h6>
-                                    <h3>30+</h3>
+                                    <h6>Heures de Services</h6>
+                                    <h3>{{$totalHeures}}</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/icon/dash-icon-03.svg') }}" alt="Dashboard Icon">
@@ -62,7 +62,7 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Revenue</h6>
+                                    <h6>Department</h6>
                                     <h3>$505</h3>
                                 </div>
                                 <div class="db-icon">
