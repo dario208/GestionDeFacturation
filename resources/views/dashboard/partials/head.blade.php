@@ -18,6 +18,8 @@
 <!-- Vendors CSS -->
 <link rel="stylesheet" href="{{ asset('template/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
 <link rel="stylesheet" href="{{ asset('template/vendor/libs/apex-charts/apex-charts.css') }}" />
+
+
 {{-- message toastr --}}
 <link rel="stylesheet" href="{{ asset('template/css/toastr.min.css') }}">
 <script src="{{ asset('template/js/toastr_jquery.min.js') }}"></script>
@@ -25,5 +27,5 @@
 
 <script src="{{ asset('template/vendor/js/helpers.js') }}"></script>
 <script src="{{ asset('template/js/config.js') }}"></script>
-
 <script src="{{ asset('template/vendor/libs/jquery/jquery-3.7.0.min.js') }}"></script>
+

@@ -8,7 +8,7 @@
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <title>Dashboard</title>
     <meta name="description" content="" />
-    
+
     @include('dashboard.partials.head')
 
 </head>
@@ -48,10 +48,16 @@
         <!-- Overlay -->
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-
+   
     @include('dashboard.partials.footerScript')
+
     <script>
         new DataTable('#example');
+
+        $('.printPage').click(function() {
+            window.print();
+            return false;
+        });
     </script>
 </body>
 

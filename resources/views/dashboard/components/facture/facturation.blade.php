@@ -9,10 +9,12 @@
                     <div class="row d-flex align-items-baseline">
 
                         <div class="col-xl-3 float-end">
-                            <a class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark"><i
-                                    class="fas fa-print text-primary"></i> Print</a>
-                            <a class="btn btn-light text-capitalize" data-mdb-ripple-color="dark"><i
-                                    class="far fa-file-pdf text-danger"></i> Export</a>
+                            <button class="printPage btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark">
+                                <i class='bx bx-printer' style='color:#388ff9'></i>
+                                Print
+                            </button>
+                            <a class="btn btn-light text-capitalize" data-mdb-ripple-color="dark"><i class='bx bxs-file-pdf'
+                                    style='color:#f96262'></i> Export</a>
                         </div>
                         <hr>
                     </div>
@@ -22,7 +24,7 @@
                         <div class="row">
                             <div class="col-xl-8">
                                 <ul class="list-unstyled">
-                                    <li class="text-muted">A: <span style="color:#5d9fc5 ;">{{ $prof->nom }}</span></li>
+                                    <li class="text-muted">A: <span style="color:#5d9fc5 ;">{{ $prof->prenom }}</span></li>
                                     <li class="text-muted">{{ $prof->user->email }}</li>
                                     <li class="text-muted"><i class="fas fa-phone"></i>{{ $prof->telephone }}</li>
                                 </ul>
@@ -68,10 +70,9 @@
                             </table>
                         </div>
                         <div class="row">
-                            <div class="col-xl-8">
-                                <p class="ms-3">Add additional notes and payment information</p>
+                            <div class="col-xl-8"></div>
 
-                            </div>
+
                             <div class="col-xl-3">
 
                                 <p class="text-black float-start"><span class="text-black me-3"> Total Montant</span><span
@@ -80,9 +81,8 @@
                         </div>
                         <hr>
                         <div class="row">
-                            <div class="col-xl-10">
-                                <p>Thank you for your purchase</p>
-                            </div>
+                            <div class="col-xl-10"> </div>
+
                             <div class="col-xl-2">
                                 <button type="button" class="btn btn-primary text-capitalize"
                                     style="background-color:#60bdf3 ;">Pay Now</button>
