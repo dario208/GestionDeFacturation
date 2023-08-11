@@ -9,7 +9,8 @@ class Facture extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['solde_totale','statut','prof_id'];
+    public $timestamps = false;
+    protected $fillable = ['solde_totale','statut','prof_id','date_paiement','date_facturation'];
 
     // Relation Many-to-One : Une facture appartient à un professeur
     public function professeur()

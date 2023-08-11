@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Facture;
+use Carbon\Carbon;
 use App\Models\Prof;
 use App\Models\Module;
+use App\Models\Facture;
 use Illuminate\Http\Request;
 
 class factureController extends Controller
@@ -45,8 +46,11 @@ class factureController extends Controller
         Facture::create([
             'prof_id'=>$prof_id,
             'solde_totale'=>$montant,
-            'statut'=>'Payé'
+            'statut'=>'Payé',
+            'date_paiement'=>Carbon::now(),
+            'date_facturation'=>Carbon::now(),
         ]);
+        return redirect()->back();
     }
 
     /**
