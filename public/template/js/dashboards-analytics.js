@@ -279,7 +279,7 @@
   const growthChartEl = document.querySelector('#growthChart'),
     growthChartOptions = {
       series: [80],
-      labels: ['Revenue'],
+      labels: ['facture'],
       chart: {
         height: 240,
         type: 'radialBar'
@@ -473,7 +473,7 @@
                 show: true,
                 fontSize: '0.8125rem',
                 color: axisColor,
-                label: 'Weekly',
+                label: 'statistiques',
                 formatter: function (w) {
                   return '95%';
                 }
