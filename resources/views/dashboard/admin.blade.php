@@ -17,11 +17,11 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Students</h6>
-                                    <h3>50055</h3>
+                                    <h6>Nos professeurs</h6>
+                                    <h3>{{$total_profs}}</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ asset('images/icon/dash-icon-01.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/proff.png') }}" alt="Dashboard Icon" height="50px" width="50px">
                                 </div>
                             </div>
                         </div>
@@ -32,8 +32,8 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Awards</h6>
-                                    <h3>50+</h3>
+                                    <h6>Nos Modules</h6>
+                                    <h3>{{$total_modules}}</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/icon/dash-icon-02.svg') }}" alt="Dashboard Icon">
@@ -47,8 +47,8 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Department</h6>
-                                    <h3>30+</h3>
+                                    <h6>Heures de Services</h6>
+                                    <h3>{{$totalHeures}}</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/icon/dash-icon-03.svg') }}" alt="Dashboard Icon">
@@ -62,11 +62,11 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Revenue</h6>
-                                    <h3>$505</h3>
+                                    <h6>Departement</h6>
+                                    <h3>50</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ asset('images/icon/dash-icon-04.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/icon/dash-icon-03.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
@@ -80,14 +80,12 @@
                         <div class="d-flex align-items-end row">
                             <div class="col-sm-7">
                                 <div class="card-body">
-                                    <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                                    <h5 class="card-title text-primary"><span class="badge bg-success fs-6">Bienvenue!</span> </h5>
                                     <p class="mb-4">
-                                        You have done <span class="fw-bold">72%</span> more sales today. Check your new
-                                        badge in
-                                        your profile.
+                                        Nous vous souhaitons la bienvenue dans votre espace de travail ! 🌟.
                                     </p>
 
-                                    <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+                                    <a href="javascript:;" class="btn btn-sm btn-outline-primary">Voir onglets</a>
                                 </div>
                             </div>
                             <div class="col-sm-5 text-center text-sm-left">
