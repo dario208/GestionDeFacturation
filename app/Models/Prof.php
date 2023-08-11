@@ -13,7 +13,7 @@ class Prof extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
-        
+
     }
 
 
@@ -32,7 +32,7 @@ class Prof extends Model
 
 
 
-     
+
 
 
 }
