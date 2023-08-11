@@ -84,12 +84,12 @@
                         <div class="d-flex align-items-end row">
                             <div class="col-sm-7">
                                 <div class="card-body">
-                                    <h5 class="card-title text-primary"><span class="badge bg-success fs-5">Bienvenue {{ $prof->nom }}!</h5>
+                                    <h5 class="card text-primary"><span class="badge bg-success fs-5">Bienvenue {{ $prof->prenom }} {{ $prof->nom }} !</h5>
                                     <p class="mb-4">
                                         Nous vous souhaitons la bienvenue dans votre espace de travail ! 🌟.
                                     </p>
 
-                                    <a href="javascript:;" class="btn btn-sm btn-outline-primary">Voir onglets</a>
+                                    <a href="javascript:;" class="btn btn-sm btn-outline-warning">Voir onglets</a>
                                 </div>
                             </div>
                             <div class="col-sm-5 text-center text-sm-left">
