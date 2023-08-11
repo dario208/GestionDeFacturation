@@ -10,7 +10,7 @@
             content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
         <title>Document</title>
         <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="{{ asset('images/invoice_951764.png') }}" />
+        <link rel="icon" type="image/x-icon" href="{{asset('images/Capture_d_écran__6_-removebg-preview.png')}}" />
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,6 +37,7 @@
         <link rel="stylesheet" href="{{ asset('template/css/toastr.min.css') }}">
         <script src="{{ asset('template/js/toastr_jquery.min.js') }}"></script>
         <script src="{{ asset('template/js/toastr.min.js') }}"></script>
+        <script src="{{ asset('template/vendor/libs/jquery/jquery-3.7.0.min.js') }}"></script>
     </head>
 
 <body>
@@ -62,6 +63,13 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
+    @if (isset($print) && $print)
+        <script>
+            window.onload = function() {
+                window.print(); // Déclenche automatiquement l'impression lorsque la page est chargée
+            };
+        </script>
+    @endif
 
 </body>
 

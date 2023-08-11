@@ -16,23 +16,23 @@ class factureController extends Controller
         $profs = Prof::all();
 
 
-        return view('dashboard.components.facture.suivie',[
-            'profs'=>$profs
+        return view('dashboard.components.facture.suivie', [
+            'profs' => $profs
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create( string $id)
+    public function create(string $id)
 
     {
-        $prof=Prof::find($id);
-        $module =Module::where('prof_id',$id)->get();
+        $prof = Prof::find($id);
+        $module = Module::where('prof_id', $id)->get();
 
-        return view('dashboard.components.facture.facturation',[
-            'prof' => $prof ,
-            'module'=>$module
+        return view('dashboard.components.facture.facturation', [
+            'prof' => $prof,
+            'module' => $module
         ]);
     }
 
@@ -75,5 +75,17 @@ class factureController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function print(string $id)
+    {
+        $prof = Prof::find($id);
+        $module = Module::where('prof_id', $id)->get();
+
+        // Ajoutez la ligne suivante pour exécuter la fonction window.print() après la redirection
+        return view('dashboard.components.facture.print', [
+            'prof' => $prof,
+            'module' => $module
+        ])->with('print', true); // Passer une variable "print" à la vue pour déclencher l'impression
     }
 }

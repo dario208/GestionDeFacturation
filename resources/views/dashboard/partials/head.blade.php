@@ -1,5 +1,5 @@
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="{{ asset('images/invoice_951764.png') }}" />
+<link rel="icon" type="image/x-icon" href="{{asset('images/Capture_d_écran__6_-removebg-preview.png')}}" />
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
