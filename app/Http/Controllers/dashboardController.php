@@ -14,8 +14,22 @@ class dashboardController extends Controller
     {
         $user_id = Auth::id();
         $prof = Prof::where('user_id',$user_id)->first();
+
+        $totalHeures = 0;
+        $total_modules = $prof->modules->count();
+
+        $totalClasses = $prof->modules->pluck('classe_id')->unique()->count();
+
+        foreach ($prof->modules as $module) {
+            foreach ($module->historiques as $historique) {
+                $totalHeures += $historique->total_heure;
+            }
+        }
         return view('dashboard.prof',[
             'prof' => $prof ,
+            'totalHeures' => $totalHeures,
+            'total_modules' => $total_modules,
+            'totalClasses'=>$totalClasses,
         ]);
     }
 
