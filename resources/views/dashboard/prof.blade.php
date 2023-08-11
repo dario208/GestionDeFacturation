@@ -22,7 +22,7 @@
                                     <h3>{{$totalClasses}}</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ asset('images/icon/teacher-icon-01.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/classroom.png') }}" alt="Dashboard Icon" height="80px" width="80px">
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                                     <h3>{{$total_modules}}</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ asset('images/icon/teacher-icon-02.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/module.png') }}" alt="Dashboard Icon"  height="80px" width="80px">
                                 </div>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="db-icon">
                                     
-                                    <img src="{{ asset('images/icon/teacher-icon-03.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/time.png') }}" alt="Dashboard Icon"  height="80px" width="80px">
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
                                     <h6>Facture reçue</h6>
-                                    <h3>15/20</h3>
+                                    <h3>2</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/invoice_951764.png') }}" alt="Dashboard Icon" height="80px" width="80px">
@@ -123,7 +123,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pb-0 px-0 px-md-4">
-                                            <img src="{{ asset('images/sold.png') }}" height="120 px" width="110px" alt="View Badge User"
+                                            <img src="{{ asset('images/solde.png') }}" height="120 px" width="110px" alt="View Badge User"
                                                 data-app-dark-img="illustrations/man-with-laptop-dark.png"
                                                 data-app-light-img="illustrations/man-with-laptop-light.png">
                                         </div>
