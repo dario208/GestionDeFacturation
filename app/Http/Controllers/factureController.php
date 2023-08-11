@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Facture;
 use App\Models\Prof;
 use App\Models\Module;
 use Illuminate\Http\Request;
@@ -39,9 +40,13 @@ class factureController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, string $montant ,string $prof_id)
     {
-        //
+        Facture::create([
+            'prof_id'=>$prof_id,
+            'solde_totale'=>$montant,
+            'statut'=>'Payé'
+        ]);
     }
 
     /**
