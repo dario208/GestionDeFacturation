@@ -41,7 +41,7 @@
           endingShape: 'rounded'
         }
       },
-      colors: [config.colors.primary, config.colors.info],
+      colors: [config.colors.success, config.colors.info],
       dataLabels: {
         enabled: false
       },
@@ -315,13 +315,13 @@
           }
         }
       },
-      colors: [config.colors.primary],
+      colors: [config.colors.info],
       fill: {
         type: 'gradient',
         gradient: {
           shade: 'dark',
           shadeIntensity: 0.5,
-          gradientToColors: [config.colors.primary],
+          gradientToColors: [config.colors.success],
           inverseColors: true,
           opacityFrom: 1,
           opacityTo: 0.6,
