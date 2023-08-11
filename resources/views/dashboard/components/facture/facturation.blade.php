@@ -89,7 +89,7 @@
                                 <div class="col-xl-10"> </div>
 
                                 <div class="col-xl-2">
-                                    <button type="button" class="btn btn-primary text-capitalize"
+                                    <button type="submit" type="button" class="btn btn-primary text-capitalize"
                                         style="background-color:#60bdf3 ;">Pay Now</button>
                                 </div>
                             </div>
