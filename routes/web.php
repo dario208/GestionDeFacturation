@@ -116,12 +116,12 @@ Route::middleware(['auth', 'user-access:comptable'])->group(function () {
 
             Route::get('suivie', 'index')->name('facture.suivie');
             Route::get('facturation/{id}', 'create')->name('facture.facturation');
+            Route::post('facturation/{montant}/{prof_id}','store')->name('facture.store');
+            Route::get('print/{id}','print')->name('facture.print');
         });
     });
-
-    Route::get('/print', function () {
-        return view('principale');
-    });
+   
+   
 });
 
 
