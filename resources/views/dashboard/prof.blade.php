@@ -19,8 +19,23 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Students</h6>
-                                    <h3>50055</h3>
+                                    <h6>Total de Classes</h6>
+                                    <h3>04/06</h3>
+                                </div>
+                                <div class="db-icon">
+                                    <img src="{{ asset('images/icon/teacher-icon-01.svg') }}" alt="Dashboard Icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                    <div class="card bg-comman w-100">
+                        <div class="card-body">
+                            <div class="db-widgets d-flex justify-content-between align-items-center">
+                                <div class="db-info">
+                                    <h6>Total d'étudiant</h6>
+                                    <h3>40/60</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/icon/dash-icon-01.svg') }}" alt="Dashboard Icon">
@@ -34,11 +49,11 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Awards</h6>
-                                    <h3>50+</h3>
+                                    <h6>Total de module</h6>
+                                    <h3>03/15</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ asset('images/icon/dash-icon-02.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/icon/teacher-icon-02.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
@@ -49,26 +64,11 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Department</h6>
-                                    <h3>30+</h3>
+                                    <h6>Total Hours</h6>
+                                    <h3>15/20</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ asset('images/icon/dash-icon-03.svg') }}" alt="Dashboard Icon">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                    <div class="card bg-comman w-100">
-                        <div class="card-body">
-                            <div class="db-widgets d-flex justify-content-between align-items-center">
-                                <div class="db-info">
-                                    <h6>Revenue</h6>
-                                    <h3>$505</h3>
-                                </div>
-                                <div class="db-icon">
-                                    <img src="{{ asset('images/icon/dash-icon-04.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/icon/teacher-icon-03.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
@@ -115,25 +115,29 @@
                                         <div
                                             class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                                             <div class="card-title">
-                                                <h5 class="text-nowrap mb-2">Profile Report</h5>
-                                                <br>
-                                                <span class="badge bg-label-warning rounded-pill">Year 2021</span>
+                                                <h5 class="text-nowrap mb-2">Soldes</h5>
+                                                <span class="badge bg-label-warning rounded-pill">Année 2023</span>
                                             </div>
                                             <div class="mt-sm-auto">
                                                 <small class="text-success text-nowrap fw-semibold"><i
                                                         class="bx bx-chevron-up"></i>
-                                                    68.2%</small>
-                                                <br>
-                                                <h3 class="mb-0">$84,686k</h3>
+                                                    50%</small>
+                                                    <br>
+                                                <h3 class="mb-0">{{$prof->solde_actuelle}}</h3>
                                             </div>
                                         </div>
+                                        <div class="card-body pb-0 px-0 px-md-4">
+                                            <img src="{{ asset('images/sold.png') }}" height="130" alt="View Badge User"
+                                                data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                                                data-app-light-img="illustrations/man-with-laptop-light.png">
+                                        </div>
                                         <br>
-                                        <div id="profileReportChart"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
                 <!-- Total Revenue -->
                 <div class="col-12 col-lg-12 order-2 order-md-3 order-lg-2 mb-4">
