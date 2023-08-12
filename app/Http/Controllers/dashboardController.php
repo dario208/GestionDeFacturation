@@ -25,6 +25,8 @@ class dashboardController extends Controller
                 $totalHeures += $historique->total_heure;
             }
         }
+
+
         return view('dashboard.prof',[
             'prof' => $prof ,
             'totalHeures' => $totalHeures,
@@ -58,6 +60,9 @@ class dashboardController extends Controller
 
     public function dashboardComptable(): View
     {
-        return view('dashboard.comptable');
+        $total_profs = Prof::count();
+        return view('dashboard.comptable',[
+            'total_profs' => $total_profs,
+        ]);
     }
 }
