@@ -27,7 +27,14 @@
                                 <td>{{ $prof->nom }}</td>
                                 <td>{{ $prof->prenom }}</td>
                                 <td>{{ $prof->solde_actuelle }} </td>
-                                <td><span class="badge bg-success">Payé</span></td>
+                                <td><span class="badge bg-success">
+                                        @if ($prof->factures->isEmpty())
+                                            <span class="badge bg-danger">En attente</span>
+                                        @else
+                                            <span class="badge bg-success">{{ $prof->factures->last()->statut }}</span>
+                                        @endif
+
+                                    </span></td>
                                 <td>
                                     <a class="text-secondary"
                                         href="{{ route('facture.facturation', ['id' => $prof->id]) }}"><i
