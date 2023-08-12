@@ -2,6 +2,9 @@
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Enregistrement du module</h4>
+        <div class=" text-end mb-4">
+            <a class="btn btn-dark" href="">Retour</a>
+        </div>
 
 
         <!-- HTML5 Inputs -->
@@ -76,7 +79,7 @@
         </div>
 
         <div class="text-start">
-            <button type="submit" class="btn btn-dark">Créer le module</button>
+            <button type="submit" class="btn btn-info">Créer le module</button>
         </div>
 
 

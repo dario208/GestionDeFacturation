@@ -2,6 +2,9 @@
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Facturation</h4>
+        <div class=" text-end mb-4">
+            <a class="btn btn-dark" href="">Retour</a>
+        </div>
 
         <div class="card">
             <div class="card-body">
