@@ -66,7 +66,7 @@
             </li>
             <li class="menu-item {{ active_open(['module/liste', 'module/add']) }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
-                    <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                    <i class="menu-icon tf-icons bx bx-detail"></i>
                     <div data-i18n="Account Settings">Module</div>
                 </a>
                 <ul class="menu-sub">
