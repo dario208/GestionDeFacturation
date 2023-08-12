@@ -116,7 +116,7 @@ Route::middleware(['auth', 'user-access:comptable'])->group(function () {
 
             Route::get('suivie', 'index')->name('facture.suivie');
             Route::get('facturation/{id}', 'create')->name('facture.facturation');
-            Route::get('facturation/{montant}/{prof_id}','store')->name('facture.store');
+            Route::post('facturation/{montant}/{prof_id}','store')->name('facture.store');
             Route::get('print/{id}','print')->name('facture.print');
         });
     });
