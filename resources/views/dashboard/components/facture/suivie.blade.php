@@ -6,7 +6,7 @@
         <!-- Basic Bootstrap Table -->
         <div class="card p-3">
             <h5 class="card-header badge bg-info fs-4">Suivie de Facture</h5>
-            <div class="table-responsive text-nowrap">
+            <div class="table-responsive text-nowrap py-3">
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr class="bg-primary">
@@ -44,8 +44,7 @@
                                     </span></td>
                                 <td>
                                     <a class="text-secondary"
-                                        href="{{ route('facture.facturation', ['id' => $prof->id]) }}"><i
-                                            class="bx bx-info-circle"></i></a>
+                                        href="{{ route('facture.facturation', ['id' => $prof->id]) }}"><i class="bi bi-building-check"><i class='bx bxs-receipt'></i></a>
                                 </td>
 
                             </tr>

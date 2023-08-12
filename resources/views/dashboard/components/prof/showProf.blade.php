@@ -6,19 +6,30 @@
             <div class=" text-end mb-4">
                 <a class="btn btn-warning" href="">Retour</a>
             </div>
-
-            <ul class="list-group list-group-light">
-                <li class="list-group-item px-3 border-0 rounded-3 list-group-item-info  mb-2 fw-bold">ID: <span
-                        class="fw-normal ms-3">{{ $prof->id }}</span></li>
-                <li class="list-group-item px-3 border-0 rounded-3 list-group-item-info  mb-2 fw-bold">Nom: <span
-                        class="fw-normal ms-3">{{ $prof->nom }}</span></li>
-                <li class="list-group-item px-3 border-0 rounded-3 list-group-item-secondary mb-2 fw-bold">Prenom: <span
-                        class="fw-normal ms-3">{{ $prof->prenom }}</span></li>
-                <li class="list-group-item px-3 border-0 rounded-3 list-group-item-success mb-2 fw-bold">E-mail: <span
-                        class="fw-normal ms-3">{{ $prof->user->email }}</span></li>
-                <li class="list-group-item px-3 border-0 rounded-3 list-group-item-danger mb-2 fw-bold">Telephone: <span
-                        class="fw-normal ms-3">{{ $prof->telephone }}</span></li>
-            </ul>
+            <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">Professeur</h5>
+                </div>
+                <div class="card-body">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <strong>ID:</strong> <span class="ms-3">{{ $prof->id }}</span>
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Nom:</strong> <span class="ms-3">{{ $prof->nom }}</span>
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Prénom:</strong> <span class="ms-3">{{ $prof->prenom }}</span>
+                    </li>
+                    <li class="list-group-item">
+                      <strong>E-mail:</strong> <span class="ms-3">{{ $prof->user->email }}</span>
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Téléphone:</strong> <span class="ms-3">{{ $prof->telephone }}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
             <div class="text-center mt-4">
                 <h4 class="fw-bold py-2 mb-4"><span class="text-muted fw-light"></span>Module enseignée</h4>
@@ -43,7 +54,5 @@
                 @endforeach
             </div>
         </div>
-        <div>
-            <button><a href=""></a></button>
-        </div>
+        
     @endsection
