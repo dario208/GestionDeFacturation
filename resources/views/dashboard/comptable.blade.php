@@ -19,7 +19,7 @@
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
                                     <h6>Nos professeurs</h6>
-                                    <h3></h3>
+                                    <h3>{{$total_profs}}</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/proff.png') }}" alt="Dashboard Icon"  height="80px" width="80px">
@@ -34,7 +34,7 @@
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
                                     <h6>Facture payé</h6>
-                                    <h3></h3>
+                                    <h3>{{session('countPayees')}}</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/facture.png') }}" alt="Dashboard Icon" height="80px" width="80px">
@@ -49,7 +49,7 @@
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
                                     <h6>Facture en attente</h6>
-                                    <h3></h3>
+                                    <h3>{{session('countEnAttente')}}</h3>
                                 </div>
                                 <div class="db-icon">
                                     <img src="{{ asset('images/invoice_951764.png') }}" alt="Dashboard Icon"  height="80px" width="80px">
