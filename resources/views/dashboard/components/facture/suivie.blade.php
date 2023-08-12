@@ -32,8 +32,9 @@
                                 <td>{{ $prof->nom }}</td>
                                 <td>{{ $prof->prenom }}</td>
                                 <td>{{ $prof->solde_actuelle }} </td>
-                                <td><span class="badge bg-success">
+                                <td><span >
                                         @if ($prof->factures->isEmpty())
+                                            <span class="badge bg-warning">En attente</span>
                                             <span class="badge bg-danger">En attente</span>
                                             @php $countEnAttente++ @endphp
                                         @else
