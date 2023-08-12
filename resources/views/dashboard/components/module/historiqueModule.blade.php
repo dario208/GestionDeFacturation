@@ -2,6 +2,9 @@
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms /</span>Historique</h4>
+        <div class=" text-end mb-4">
+            <a class="btn btn-dark" href="">Retour</a>
+        </div>
 
         <div class="card">
             <h5 class="card-header">Responsive Table</h5>
@@ -30,10 +33,16 @@
                             <td colspan="3"class="borderless"></td>
                             <td>Tolal: <span>{{$heure_effectue}} </span>heures sur <span>{{$heure_globale}}</span></td>
                         </tr>
+                        <tr>
+                            <td colspan="3"class="borderless"></td>
+                            <td class="badge bg-success fs-6 py-3 my-3">Soit: <span>{{$montant_total}} </span>Ariary</td>
+                            <br>
+                        </tr>
+                        <br>
                     </tbody>
+                    
                 </table>
 
-                soit: {{$montant_total}} Ariary
             </div>
 
 
