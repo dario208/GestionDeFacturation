@@ -109,20 +109,12 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
-                                        <div
-                                            class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
-                                            <div class="card-title">
-                                                <h5 class="text-nowrap mb-2">Soldes</h5>
-                                                <span class="badge bg-label-warning rounded-pill">Année 2023</span>
-                                            </div>
-                                            <div class="mt-sm-auto">
-                                                <small class="text-success text-nowrap fw-semibold fs-6">MGA</small>
-                                                    <br>
-                                                <h3 class="mb-0"></h3>
-                                            </div>
+                                        <div class="card-body">
+                                            <h5 class="card text-primary">Google Agenda</h5>
+                                            <a href="https://www.google.com/calendar/render?action=TEMPLATE" target="_blank" class="btn btn-sm btn-outline-warning">Agenda</a>
                                         </div>
                                         <div class="card-body pb-0 px-0 px-md-4">
-                                            <img src="{{ asset('images/denari.png') }}" height="130 px" width="130px" alt="View Badge User"
+                                            <img src="{{ asset('images/google.png') }}" height="130 px" width="130px" alt="View Badge User"
                                                 data-app-dark-img="illustrations/man-with-laptop-dark.png"
                                                 data-app-light-img="illustrations/man-with-laptop-light.png">
                                         </div>
