@@ -35,7 +35,6 @@
                                 <td><span >
                                         @if ($prof->factures->isEmpty())
                                             <span class="badge bg-warning">En attente</span>
-                                            <span class="badge bg-danger">En attente</span>
                                             @php $countEnAttente++ @endphp
                                         @else
                                             <span class="badge bg-success">{{ $prof->factures->last()->statut }}</span>
