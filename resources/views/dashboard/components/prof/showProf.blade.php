@@ -3,6 +3,9 @@
     <div class="container">
         <div class="container-xxl flex-grow-1 container-p-y">
             <h4 class="fw-bold py-2 mb-4"><span class="text-muted fw-light"></span>Details du professeur</h4>
+            <div class=" text-end mb-4">
+                <a class="btn btn-warning" href="">Retour</a>
+            </div>
 
             <ul class="list-group list-group-light">
                 <li class="list-group-item px-3 border-0 rounded-3 list-group-item-info  mb-2 fw-bold">ID: <span
@@ -39,5 +42,8 @@
                     </div>
                 @endforeach
             </div>
+        </div>
+        <div>
+            <button><a href=""></a></button>
         </div>
     @endsection

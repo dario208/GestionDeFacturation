@@ -21,17 +21,25 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $countEnAttente = 0;
+                            $countPayees = 0;
+                        @endphp
+
                         @foreach ($profs as $prof)
                             <tr>
                                 <td>{{ $prof->id }}</td>
                                 <td>{{ $prof->nom }}</td>
                                 <td>{{ $prof->prenom }}</td>
                                 <td>{{ $prof->solde_actuelle }} </td>
-                                <td><span class="badge bg-success">
+                                <td><span >
                                         @if ($prof->factures->isEmpty())
+                                            <span class="badge bg-warning">En attente</span>
                                             <span class="badge bg-danger">En attente</span>
+                                            @php $countEnAttente++ @endphp
                                         @else
                                             <span class="badge bg-success">{{ $prof->factures->last()->statut }}</span>
+                                            @php $countPayees++ @endphp
                                         @endif
 
                                     </span></td>
@@ -47,6 +55,9 @@
                 </table>
             </div>
         </div>
-
+        @php
+            session(['countEnAttente' => $countEnAttente]);
+            session(['countPayees' => $countPayees]);
+        @endphp
     </div>
 @endsection

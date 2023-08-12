@@ -18,11 +18,11 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Students</h6>
-                                    <h3>50055</h3>
+                                    <h6>Nos professeurs</h6>
+                                    <h3></h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ asset('images/icon/dash-icon-01.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/proff.png') }}" alt="Dashboard Icon"  height="80px" width="80px">
                                 </div>
                             </div>
                         </div>
@@ -33,11 +33,11 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Awards</h6>
-                                    <h3>50+</h3>
+                                    <h6>Facture payé</h6>
+                                    <h3></h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ asset('images/icon/dash-icon-02.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/facture.png') }}" alt="Dashboard Icon" height="80px" width="80px">
                                 </div>
                             </div>
                         </div>
@@ -48,11 +48,11 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Department</h6>
-                                    <h3>30+</h3>
+                                    <h6>Facture en attente</h6>
+                                    <h3></h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ asset('images/icon/dash-icon-03.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/invoice_951764.png') }}" alt="Dashboard Icon"  height="80px" width="80px">
                                 </div>
                             </div>
                         </div>
@@ -63,11 +63,11 @@
                         <div class="card-body">
                             <div class="db-widgets d-flex justify-content-between align-items-center">
                                 <div class="db-info">
-                                    <h6>Revenue</h6>
-                                    <h3>$505</h3>
+                                    <h6>Departement</h6>
+                                    <h3>3</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ asset('images/icon/dash-icon-04.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ asset('images/departement.png') }}" alt="Dashboard Icon" height="80px" width="80px">
                                 </div>
                             </div>
                         </div>
@@ -83,19 +83,17 @@
                         <div class="d-flex align-items-end row">
                             <div class="col-sm-7">
                                 <div class="card-body">
-                                    <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                                    <h5 class="card text-primary"><span class="badge bg-success fs-5">Bienvenue!</h5>
                                     <p class="mb-4">
-                                        You have done <span class="fw-bold">72%</span> more sales today. Check your new
-                                        badge in
-                                        your profile.
+                                        Nous vous souhaitons la bienvenue dans votre espace de travail ! 🌟.
                                     </p>
 
-                                    <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+                                    <a href="javascript:;" class="btn btn-sm btn-outline-warning">Voir onglets</a>
                                 </div>
                             </div>
                             <div class="col-sm-5 text-center text-sm-left">
                                 <div class="card-body pb-0 px-0 px-md-4">
-                                    <img src="{{ asset('images/compdash.png') }}" height="160" alt="View Badge User"
+                                    <img src="{{ asset('images/teachers.png') }}" height="160" alt="View Badge User"
                                         data-app-dark-img="illustrations/man-with-laptop-dark.png"
                                         data-app-light-img="illustrations/man-with-laptop-light.png">
                                         
@@ -111,23 +109,16 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
-                                        <div
-                                            class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
-                                            <div class="card-title">
-                                                <h5 class="text-nowrap mb-2">Profile Report</h5>
-                                                <br>
-                                                <span class="badge bg-label-warning rounded-pill">Year 2021</span>
-                                            </div>
-                                            <div class="mt-sm-auto">
-                                                <small class="text-success text-nowrap fw-semibold"><i
-                                                        class="bx bx-chevron-up"></i>
-                                                    68.2%</small>
-                                                <br>    
-                                                <h3 class="mb-0">$84,686k</h3>
-                                            </div>
+                                        <div class="card-body">
+                                            <h5 class="card text-primary">Google Agenda</h5>
+                                            <a href="https://www.google.com/calendar/render?action=TEMPLATE" target="_blank" class="btn btn-sm btn-outline-warning">Agenda</a>
+                                        </div>
+                                        <div class="card-body pb-0 px-0 px-md-4">
+                                            <img src="{{ asset('images/google.png') }}" height="130 px" width="130px" alt="View Badge User"
+                                                data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                                                data-app-light-img="illustrations/man-with-laptop-light.png">
                                         </div>
                                         <br>
-                                        <div id="profileReportChart"></div>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +130,7 @@
                     <div class="card">
                         <div class="row row-bordered g-0">
                             <div class="col-md-8">
-                                <h5 class="card-header m-0 me-2 pb-3">Total de Rémuneration</h5>
+                                <h5 class="card-header m-0 me-2 pb-3">Statistique de facturation</h5>
                                 <div id="totalRevenueChart" class="px-2"></div>
                             </div>
                             <div class="col-md-4">
@@ -162,37 +153,20 @@
                                     </div>
                                 </div>
                                 <div id="growthChart"></div>
-                                <div class="text-center fw-semibold pt-3 mb-2">62% Company Growth</div>
+                                
 
-                                <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
-                                    <div class="d-flex">
-                                        <div class="me-2">
-                                            <span class="badge bg-label-primary p-2"><i
-                                                    class="bx bx-dollar text-primary"></i></span>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <small>2022</small>
-                                            <h6 class="mb-0">$32.5k</h6>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="me-2">
-                                            <span class="badge bg-label-info p-2"><i
-                                                    class="bx bx-wallet text-info"></i></span>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <small>2021</small>
-                                            <h6 class="mb-0">$41.2k</h6>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
+                <br>
+                <br>
+                <!--/ Total Revenue -->
+                <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
 
 
-                
+                </div>
             </div>
             <div class="row">
                 <!-- Order Statistics -->
