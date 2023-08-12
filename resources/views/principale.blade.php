@@ -17,10 +17,10 @@
 
                 <ul class="menu_items">
                     <img src="{{ asset('images/times.svg') }}" alt="timesicon" id="menu_toggle" />
-                    <li><a href="#" class="nav_link">Accueil</a></li>
+                    {{-- <li><a href="#" class="nav_link">Accueil</a></li>
                     <li><a href="#" class="nav_link">A propos </a></li>
                     <li><a href="#" class="nav_link">Service</a></li>
-                    <li><a href="#" class="nav_link">Contact</a></li>
+                    <li><a href="#" class="nav_link">Contact</a></li> --}}
                 </ul>
                 <img src="{{ asset('images/bars.svg') }}" alt="timesicon" id="menu_toggle" />
             </nav>
@@ -31,7 +31,7 @@
         <section class="hero">
             <div class="row container">
                 <div class="column">
-                    <h2>projet est <span></span></h2>
+                    <h2>DENARIAN est <span></span></h2>
                     <p>Créez instantanément des factures détaillées, suivez les paiements en direct et adaptez facilement
                         les
                         tarifs. Simplifiez la gestion financière pour vous concentrer sur l'épanouissement des élèves et des
