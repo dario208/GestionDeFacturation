@@ -54,6 +54,21 @@
     <script>
         new DataTable('#example');
 
+        document.addEventListener("DOMContentLoaded", function() {
+            const payNowButton = document.getElementById("payNowButton");
+            const paymentStatus = document.getElementById("paymentStatus");
+
+            payNowButton.addEventListener("click", function(event) {
+                event.preventDefault(); // Empêcher le comportement par défaut du bouton
+                payNowButton.style.display = "none"; // Masquer le bouton
+                paymentStatus.textContent = "Paid"; // Mettre à jour le statut
+                paymentStatus.classList.remove("bg-warning"); // Changer la couleur du statut si nécessaire
+                paymentStatus.classList.add(
+                    "bg-success"); // Changer la couleur en vert pour indiquer le paiement réussi
+            });
+        });
+
+      
     </script>
 </body>
 
