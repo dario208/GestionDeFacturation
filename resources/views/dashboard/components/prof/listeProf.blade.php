@@ -59,8 +59,12 @@
 
                     </tbody>
                 </table>
+                
             </div>
+            
         </div>
+        <br>
+        
 
         <!--/ Basic Bootstrap Table -->
     </div>

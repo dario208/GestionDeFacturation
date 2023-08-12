@@ -2,6 +2,9 @@
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Enregistrement de Professeur</h4>
+        <div class=" text-end mb-4">
+            <a class="btn btn-dark" href="">Retour</a>
+        </div>
         <!-- Basic Layout -->
         <div class="row">
             <div class="col-xl">
@@ -74,7 +77,7 @@
             </div>
         </div>
         <div class="text-start">
-            <button type="submit" class="btn btn-dark">Envoyer</button>
+            <button type="submit" class="btn btn-info">Enregistrer</button>
         </div>
         </form>
     </div>
